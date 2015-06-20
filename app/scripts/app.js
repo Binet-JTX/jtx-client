@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/binet', {
+        templateUrl: 'views/binet.html',
+        controller: 'BinetCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
