@@ -1,0 +1,30 @@
+<div id="navbar" role="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<a ui-sref="index">
+					<img src="assets/images/logo.png" height="50" alt="Logo"/>
+					<span id="brand">JTX</span>
+				</a>
+            </div>
+            <div class="col-sm-4">
+                <form>
+                	<input type="text" role="search" ng-model="search" class="form-control" placeholder="Rechercher" />
+                	<button type="submit" class="btn btn-sm">
+                		<span class="glyphicon glyphicon-search"></span>
+                	</button>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                	<li ng-repeat="page in pages">
+                		<a ui-sref="{{ page.sref }}">
+                			<span ng-class="'glyphicon glyphicon-' + page.icon"></span>
+                			{{page.name}}
+                		</a>
+                	</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
