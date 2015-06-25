@@ -1,5 +1,7 @@
 {
-  "globalstrict": true,
+  "node": true,
+  "browser": true,
+  "esnext": true,
   "bitwise": true,
   "camelcase": true,
   "curly": true,
@@ -16,20 +18,11 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "white": true,
-  "validthis": true,
+  "jasmine": true,
   "globals": {
     "angular": false,
-    // Angular Mocks
-    "inject": false,
-    "module": false,
-    // JASMINE
-    "describe": false,
-    "it": false,
-    "before": false,
-    "beforeEach": false,
-    "after": false,
-    "afterEach": false,
-    "expect": false
+    "browser": false,
+    "inject": false
   }
 }
+
