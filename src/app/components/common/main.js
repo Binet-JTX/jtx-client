@@ -28,6 +28,11 @@ angular.module('jtx.main', [
                 url: '/binet',
                 templateUrl: 'app/components/static/binet.html'
             })
+            .state('index.video', {
+                url: '/video',
+                templateUrl: 'app/components/video/video.html',
+                controller : 'main.ctrl.video',
+            })
         ;
     }
 ])
@@ -47,6 +52,7 @@ angular.module('jtx.main', [
         $scope.pages = [
             {name:'Accueil', sref:'index', icon:'home'},
             {name:'Le binet', sref:'index.binet', icon:'heart'},
+            {name:'Video', sref:'index.video', icon:'film'}
         ];
     }
 ])
@@ -58,4 +64,10 @@ angular.module('jtx.main', [
     }
 ])
 
+.controller('main.ctrl.video', 
+    ['$scope', 
+    function($scope) {
+        //
+    }
+])
 ;
