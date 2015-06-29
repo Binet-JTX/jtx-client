@@ -25,27 +25,22 @@ angular.module('jtx.main', [
                 }
             })
             .state('index.binet', {
-                url: '/binet',
+                url: 'binet',
                 templateUrl: 'app/components/static/binet.html'
-            })
-            .state('index.video', {
-                url: '/video',
-                templateUrl: 'app/components/video/video.html',
-                controller : 'main.ctrl.video',
             })
         ;
     }
 ])
 
-.controller('main.ctrl.base', 
-    ['$scope', 
+.controller('main.ctrl.base',
+    ['$scope',
     function($scope) {
         $scope.hello = 'Hello';
     }
 ])
 
-.controller('main.ctrl.navbar', 
-    ['$scope', 
+.controller('main.ctrl.navbar',
+    ['$scope',
     function($scope) {
         $scope.search = '';
 
@@ -57,15 +52,8 @@ angular.module('jtx.main', [
     }
 ])
 
-.controller('main.ctrl.home', 
-    ['$scope', 
-    function($scope) {
-        //
-    }
-])
-
-.controller('main.ctrl.video', 
-    ['$scope', 
+.controller('main.ctrl.home',
+    ['$scope',
     function($scope) {
         //
     }

@@ -1,15 +1,16 @@
 'use strict';
 
 angular.module('jtx', [
-    'ngAnimate', 
-    'ngCookies', 
-    'ngTouch', 
-    'ngSanitize', 
-    'ngResource', 
-    'ui.router', 
+    'ngAnimate',
+    'ngCookies',
+    'ngTouch',
+    'ngSanitize',
+    'ngResource',
+    'ui.router',
     'ui.bootstrap',
 
-    'jtx.main'
+    'jtx.main',
+    'jtx.video'
 ])
 
 .config(['$urlRouterProvider',
