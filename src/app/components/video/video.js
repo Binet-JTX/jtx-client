@@ -19,7 +19,18 @@ angular.module('jtx.video', [
 .controller('video.ctrl',
     ['$scope',
     function($scope) {;
-      videojs("video", {
+      //
+    }
+])
+
+.directive('videoPlayer',function() {
+
+  var video;
+
+  function link(scope,element,attrs) {
+    attrs.$observe('src',function (value){
+      video = value;
+      videojs("video-"+"4", {
         controls : true,
         preload : 'metadata',
         width : '680',
@@ -30,6 +41,12 @@ angular.module('jtx.video', [
         }, function(){
   // Player (this) is initialized and ready.
       });
-    }
-])
+    });
+  }
+
+  return {
+     restrict : 'E',
+     templateUrl : 'app/components/video/video-player.html',
+  }
+})
 ;
