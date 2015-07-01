@@ -1,4 +1,4 @@
-angular.module('jtx.video', [
+angular.module('jtx.search', [
     //
 ])
 
@@ -14,9 +14,11 @@ angular.module('jtx.video', [
     }
 ])
 
-.controller('video.ctrl',
-    ['$scope',
-    function($scope) {;
-      $scope.query="Les démons des Sylvie"
+.controller('searchResults.ctrl',
+    ['$scope', '$resource',
+    function($scope, $resource) {
+      $scope.query="Les démons des Sylvie";
+      $scope.events=$resource("http://binet-jtx.com/dev/jtx-server/web/events.json");
+      console.log($scope.events.get());
     }
-])
+]);

@@ -18,7 +18,7 @@ function($stateProvider) {
 
 .controller('video.ctrl',
 ['$scope',
-function($scope) {;
+function($scope) {
   $scope.demons = {
     files : [
       { resolution : "1080",
@@ -28,7 +28,7 @@ function($scope) {;
       }
     ],
     id : "1"
-  }
+  };
 }
 ])
 
@@ -46,7 +46,7 @@ function($scope) {;
     }, function(){
       // Player (this) is initialized and ready.
     }));
-  };
+  }
 
   return {
     restrict : 'E',
