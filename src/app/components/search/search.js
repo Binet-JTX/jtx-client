@@ -15,10 +15,8 @@ angular.module('jtx.search', [
 ])
 
 .controller('searchResults.ctrl',
-    ['$scope', '$resource',
-    function($scope, $resource) {
-      $scope.query="Les démons des Sylvie";
-      $scope.events=$resource("http://binet-jtx.com/dev/jtx-server/web/events.json");
-      console.log($scope.events.get());
+    ['$scope', '$resource', 'Event',
+    function($scope, $resource, Event) {
+      $scope.events = Event.query();
     }
 ]);

@@ -1,2 +1,10 @@
 Coucou ! Voici les évènements :
-{{events}}
+<div ng-repeat='event in events'>
+  <h3>Titre : {{event.title}}</h3>
+  {{event.description}}
+
+  <div style="text-align:right">
+    Dates : du {{event.begin_date| date : fullDate}} au {{event.end_date | date : fullDate}}
+  </div>
+  <hr>
+</div>
