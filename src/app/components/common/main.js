@@ -47,7 +47,8 @@ angular.module('jtx.main', [
         $scope.pages = [
             {name:'Accueil', sref:'index', icon:'home'},
             {name:'Le binet', sref:'index.binet', icon:'heart'},
-            {name:'Video', sref:'index.video', icon:'film'}
+            {name:'Video', sref:'index.video', icon:'film'},
+            {name:'Recherche', sref:'index.search', icon:'search'}
         ];
     }
 ])

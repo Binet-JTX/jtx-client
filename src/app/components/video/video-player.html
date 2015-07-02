@@ -1,0 +1,5 @@
+<video id="video-{{videoObject.id}}" class="video-js vjs-default-skin">
+  <source ng-repeat="file in videoObject.files" data-res="{{file.resolution}}" src="{{file.src}}" type="video/{{file.extension}}" />
+  <track ng-if="videoObject.hasOwnProperty(subtitles)" kind="subtitles" src="{{videoObject.subtitles}}" srclang="fr"
+       label="Français">
+</video>

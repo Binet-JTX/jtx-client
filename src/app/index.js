@@ -10,7 +10,9 @@ angular.module('jtx', [
     'ui.bootstrap',
 
     'jtx.main',
-    'jtx.video'
+    'jtx.video',
+    'jtx.search',
+    'jtx.api',
 ])
 
 .config(['$urlRouterProvider',
