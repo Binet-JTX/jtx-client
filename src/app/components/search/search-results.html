@@ -1,10 +1,5 @@
 Coucou ! Voici les évènements :
 <div ng-repeat='event in events'>
-  <h3>Titre : {{event.title}}</h3>
-  {{event.description}}
-
-  <div style="text-align:right">
-    Dates : du {{event.begin_date| date : fullDate}} au {{event.end_date | date : fullDate}}
-  </div>
+  <jtx:searchable kind="event" object="event"></jtx:searchable>
   <hr>
 </div>

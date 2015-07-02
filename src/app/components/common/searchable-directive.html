@@ -4,7 +4,7 @@
     </div>
     <div class="col-sm-9">
         <h4>{{ object.title }}</h4><br />
-        <p>{{ object.description | limit:100 }}</p>
+        <p>{{ object.description | limitTo:100 }}</p>
         <h6 class="pull-right">{{ object.date | date }}</h6>
     </div>
 </div>

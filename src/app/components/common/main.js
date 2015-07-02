@@ -65,13 +65,13 @@ angular.module('jtx.main', [
         restrict: 'E',
         templateUrl: 'app/components/common/searchable-directive.html',
         scope: {
-            type: '?=', // video | projection | event
+            kind: '=kind', // video | projection | event
             object: '='
         },
         controller: ['$scope', function($scope) {
-            if ($scope.type == null)
-                $scope.type = 'video';
-            if ($scope.type == event) 
+            if ($scope.kind == null)
+                $scope.kind = 'video';
+            if ($scope.kind == event) 
                 $scope.object.date = $scope.object.begin_date;
         }]
     }
