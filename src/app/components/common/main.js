@@ -58,4 +58,21 @@ angular.module('jtx.main', [
         //
     }
 ])
+
+.directive('jtxSearchable', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'app/components/common/searchable-directive.html',
+        scope: {
+            type: '?=', // video | projection | event
+            object: '='
+        },
+        controller: ['$scope', function($scope) {
+            if ($scope.type == null)
+                $scope.type = 'video';
+            if ($scope.type == event) 
+                $scope.object.date = $scope.object.begin_date;
+        }]
+    }
+})
 ;
