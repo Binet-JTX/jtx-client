@@ -10,11 +10,6 @@ angular.module('jtx.admin', [
                 templateUrl: 'app/components/admin/admin.html',
                 controller: 'admin.ctrl'
             })
-            .state('index.admin.event', {
-              url: '/events',
-              templateUrl : 'app/components/admin/event/event.html',
-              controller: 'admin.event.ctrl',
-            })
         ;
     }
 ])
