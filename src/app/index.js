@@ -13,6 +13,7 @@ angular.module('jtx', [
     'jtx.video',
     'jtx.search',
     'jtx.api',
+    'jtx.admin',
 ])
 
 .config(['$urlRouterProvider',

@@ -24,4 +24,4 @@ angular.module('jtx.api', [
             update: {method: 'PUT', url: API.route('events/:id')},
         });
     }]
-)
+);

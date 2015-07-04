@@ -48,7 +48,8 @@ angular.module('jtx.main', [
             {name:'Accueil', sref:'index', icon:'home'},
             {name:'Le binet', sref:'index.binet', icon:'heart'},
             {name:'Video', sref:'index.video', icon:'film'},
-            {name:'Recherche', sref:'index.search', icon:'search'}
+            {name:'Recherche', sref:'index.search', icon:'search'},
+            {name: 'Administration', sref:'index.admin', icon : 'admin'}
         ];
     }
 ])
@@ -71,7 +72,7 @@ angular.module('jtx.main', [
         controller: ['$scope', function($scope) {
             if ($scope.kind == null)
                 $scope.kind = 'video';
-            if ($scope.kind == event) 
+            if ($scope.kind == 'event')
                 $scope.object.date = $scope.object.begin_date;
         }]
     }
