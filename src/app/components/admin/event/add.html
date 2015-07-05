@@ -7,14 +7,10 @@
   <input type="textarea" ng-model="event.description"></input>
   <br>
   Date de début :
-  <input type="date" placeholder="aaaa-mm-jj" ng-model="event.beginDate.date"></input>
-  Heure de début :
-  <input type="time" placeholder="hh:mm:ss" ng-model="event.beginDate.time"></input>
+  <input type="datetime-local" ng-model="event.beginDate"></input>
   <br>
   Date de fin :
-  <input type="date" placeholder="aaaa-mm-jj" ng-model="event.endDate.date"></input>
-  Heure de fin :
-  <input type="time" placeholder="hh:mm:ss" ng-model="event.endDate.time"></input>
+  <input type="datetime-local" ng-model="event.endDate"></input>
   <br>
   <button type="submit" ng-click="addEvent(event)">Ajouter</button>
   {{errors}}
