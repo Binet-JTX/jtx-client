@@ -30,7 +30,7 @@ function($stateProvider) {
   $scope.addEvent = function (event) {
     event.beginDate = $scope.event_beginDate.toISOString();
     event.endDate = $scope.event_endDate.toISOString();
-    event.$save().then(function(result) {
+    Event.save({"event": $scope.event}).then(function(result) {
       $scope.success =  "L'événement a été ajouté avec succès !";
     },
     function(errors) {
