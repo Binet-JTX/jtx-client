@@ -20,8 +20,8 @@ function($stateProvider) {
 ])
 
 .controller('admin.tag.list.ctrl',
-['$scope', '$resource', 'TagKey' , function($scope,$resource,TagKey) {
-  $scope.tagKeys = TagKey.query();
-  console.log($scope.tagKeys);
+['$scope', '$resource', 'Tag' , function($scope,$resource,Tag) {
+  $scope.tags = Tag.query();
+  console.log($scope.tags);
 
 }]);

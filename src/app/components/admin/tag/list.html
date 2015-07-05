@@ -1,5 +1,5 @@
-<p>Voici la liste des catégories de tag disponibles :</p>
+<p>Voici la liste des tags disponibles :</p>
 
 <ul>
-  <li ng-repeat='tagKey in tagKeys'>{{tagKey.name}}</li>
+  <li ng-repeat='tag in tags'>{{tag.key.name}} : {{tag.value}}</li>
 </ul>
