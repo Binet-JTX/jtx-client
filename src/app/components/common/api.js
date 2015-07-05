@@ -25,6 +25,11 @@ angular.module('jtx.api', [
         });
     }]
 )
+.factory('Tag', ['API', '$resource',
+    function(API, $resource) {
+        return $resource(API.route('tags/:id'), {id: '@id'});
+    }]
+)
 .factory('TagKey', ['API', '$resource',
     function(API, $resource) {
         return $resource(API.route('tag/keys/:id'), {id: '@id'});

@@ -70,9 +70,10 @@ angular.module('jtx.main', [
             object: '='
         },
         controller: ['$scope', function($scope) {
+          console.log($scope.kind);
             if ($scope.kind == null)
                 $scope.kind = 'video';
-            if ($scope.kind == 'event')
+            else if ($scope.kind == 'event')
                 $scope.object.date = $scope.object.begin_date;
         }]
     }
