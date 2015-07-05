@@ -1,5 +1,6 @@
 angular.module('jtx.admin', [
-    'jtx.admin.event'
+    'jtx.admin.event',
+    'jtx.admin.tag'
 ])
 
 .config(['$stateProvider',

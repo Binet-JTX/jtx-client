@@ -24,4 +24,10 @@ angular.module('jtx.api', [
             update: {method: 'PUT', url: API.route('events/:id')},
         });
     }]
-);
+)
+.factory('TagKey', ['API', '$resource',
+    function(API, $resource) {
+        return $resource(API.route('tag/keys/:id'), {id: '@id'});
+    }]
+)
+;
