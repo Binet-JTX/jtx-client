@@ -11,7 +11,7 @@ angular.module('jtx.api', [
                 if (/localhost/.test($location.absUrl())) {
                     return 'http://binet-jtx.com/dev/jtx-server/web' + (path == '' ? '' : '/' + path);
                 } else {
-                    return 'api/index.php' + (path == '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/dev/jtx-server/web/app_dev.php' + (path == '' ? '' : '/' + path);
                 }
             }
         };
