@@ -24,17 +24,18 @@ function($stateProvider) {
   $scope.event = new Event();
   $scope.event.title = "TSGED 2015";
   $scope.event.description = "Tournoi Sportif des Grandes Écoles de la Défense";
-  $scope.event.beginDate = new Date('2015','3','21','8','0','0');
-  $scope.event.endDate = new Date('2015','3','22','15','0','0');
+  $scope.event_beginDate = new Date('2015','3','21','8','0','0');
+  $scope.event_endDate = new Date('2015','3','22','15','0','0');
 
   $scope.addEvent = function (event) {
+    event.beginDate = $scope.event_beginDate.toISOString();
+    event.endDate = $scope.event_endDate.toISOString();
     event.$save().then(function(result) {
       $scope.success =  "L'événement a été ajouté avec succès !";
     },
     function(errors) {
       $scope.errors = errors;
-      console.log(errors)}
-  );
+  });
 
 };
 }
