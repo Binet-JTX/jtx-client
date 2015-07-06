@@ -29,7 +29,7 @@ angular.module('jtx.admin.event', [
         $scope.addEvent = function (event) {
             event.beginDate = $scope.event.beginDate_f.toJSON();
             event.endDate = $scope.event.endDate_f.toJSON();
-            Event.save($scope.event).then(function(result) {
+            Event.save($scope.event).$promise.then(function(result) {
                 $scope.success =  "L'événement a été ajouté avec succès !";
             }, function(errors) {
                 $scope.errors = errors;
