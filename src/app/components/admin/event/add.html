@@ -1,18 +1,18 @@
 <h4>Ajouter un événement</h4>
-<form novalidate>
-  Titre :
-  <input type="text" ng-model="event.title"></input>
-  <br>
-  Description :
-  <input type="textarea" ng-model="event.description"></input>
-  <br>
-  Date de début :
-  <input type="datetime-local" ng-model="event_beginDate"></input>
-  <br>
-  Date de fin :
-  <input type="datetime-local" ng-model="event_endDate"></input>
-  <br>
-  <button type="submit" ng-click="addEvent(event)">Ajouter</button>
-  {{errors}}
-  {{success}}
+<form ng-submit="addEvent(event)" novalidate>
+    <label for="etitle">Titre</label>
+    <input type="text" id="etitle" ng-model="event.title" />
+    <br />
+    <label for="edescription">Description</label>
+    <input type="textarea" id="edescription" ng-model="event.description" />
+    <br />
+    <label for="ebegindate">Date de début</label>
+    <input type="datetime-local" id="ebegindate" ng-model="event.beginDate_f" />
+    <br />
+    <label for="eenddate">Date de fin</label>
+    <input type="datetime-local" id="eenddate" ng-model="event.endDate_f" />
+    <br />
+    <input type="submit" value="Ajouter" />
+    {{ errors }}
+    {{ success }}
 </form>
