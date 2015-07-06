@@ -2,17 +2,22 @@
   text-align:center;
 }
 
+/* Navbar part */
 div #navbar {
+}
+
+div #logocol {
   padding-top: 15px;
 }
 
 div #searchcol {
   text-align:center;
+  padding-top: 15px;
 }
 
 div #linkcol {
   text-align:right;
-  font-size: 1.25em;
+  padding-top: 15px;
 }
 
 div #linkcol .link {

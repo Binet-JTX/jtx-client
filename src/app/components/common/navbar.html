@@ -1,43 +1,41 @@
 <div id="navbar" role="navigation">
-			<div class="col-sm-1 col-sm-offset-1" id="logocol">
-				<a ui-sref="index">
-					<img src="assets/images/logo.png" height="50" alt="Logo"/>
-					<span id="brand">JTX</span>
-				</a>
-            </div>
-            <div class="col-sm-4" id="searchcol">
-                <form>
-                	<input type="text" role="search" ng-model="search" class="form-control" placeholder="Rechercher" />
-                	<button type="submit" class="btn btn-sm">
-                		<span class="glyphicon glyphicon-search"></span>
-                	</button>
-                </form>
-            </div>
-            <div class="col-sm-5" id="linkcol">
-							<span class="link">
-								<a ui-sref='index'>
-									<span class="glyphicon glyphicon-home" />
-									Accueil
-								</a>
-							</span>
-							<span class="link">
-								<a ui-sref='index.video'>
-									<span class="glyphicon glyphicon-film" />
-									Projections JTX
-								</a>
-							</span>
-							<span class="link">
-								<a ui-sref='index.search'>
-									<span class="glyphicon glyphicon-search" />
-									Recherche
-								</a>
-							</span>
-							<span class="link" id="link-right">
-								<a ui-sref='index.admin'>
-									<span class="glyphicon glyphicon-cog" />
-									Administration
-								</a>
-							</span>
+	<div class="col-md-1 col-md-offset-1" id="logocol">
+		<a ui-sref="index">
+			<img src="assets/images/logo.png" height="50" alt="Logo"/>
+			<span id="brand">JTX</span>
+		</a>
+	</div>
+	<div class="col-md-4" id="searchcol">
+		<form>
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="search" placeholder="Rechercher...">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" /></button>
+				</span>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-6" id="linkcol">
+		<span class="link">
+			<a ui-sref='index'>
+				<span class="glyphicon glyphicon-home" />&nbsp;Accueil
+			</a>
+		</span>
+		<span class="link">
+			<a ui-sref='index.video'>
+				<span class="glyphicon glyphicon-film" />&nbsp;Projections JTX
+			</a>
+		</span>
+		<span class="link">
+			<a ui-sref='index.search'>
+				<span class="glyphicon glyphicon-search" />&nbsp;Recherche
+			</a>
+		</span>
+		<span class="link" id="link-right">
+			<a ui-sref='index.admin'>
+				<span class="glyphicon glyphicon-cog" />&nbsp;Administration
+			</a>
+		</span>
 
-            </div>
+	</div>
 </div>
