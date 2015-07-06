@@ -28,6 +28,10 @@ angular.module('jtx.main', [
                 url: 'binet',
                 templateUrl: 'app/components/static/binet.html'
             })
+            .state('index.legal', {
+                url: 'legal',
+                templateUrl: 'app/components/static/legal.html'
+            })
         ;
     }
 ])
@@ -43,16 +47,7 @@ angular.module('jtx.main', [
     ['$scope',
     function($scope) {
         $scope.search = '';
-
-        $scope.pages = [
-            {name:'Accueil', sref:'index', icon:'home'},
-            {name:'Le binet', sref:'index.binet', icon:'heart'},
-            {name:'Video', sref:'index.video', icon:'film'},
-            {name:'Recherche', sref:'index.search', icon:'search'},
-            {name: 'Administration', sref:'index.admin', icon : 'admin'}
-        ];
-    }
-])
+}])
 
 .controller('main.ctrl.home',
     ['$scope',

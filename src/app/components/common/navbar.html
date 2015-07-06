@@ -1,13 +1,11 @@
 <div id="navbar" role="navigation">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-1 col-sm-offset-1" id="logocol">
 				<a ui-sref="index">
 					<img src="assets/images/logo.png" height="50" alt="Logo"/>
 					<span id="brand">JTX</span>
 				</a>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" id="searchcol">
                 <form>
                 	<input type="text" role="search" ng-model="search" class="form-control" placeholder="Rechercher" />
                 	<button type="submit" class="btn btn-sm">
@@ -15,16 +13,31 @@
                 	</button>
                 </form>
             </div>
-            <div class="col-sm-4">
-                <ul>
-                	<li ng-repeat="page in pages">
-                		<a ui-sref="{{ page.sref }}">
-                			<span ng-class="'glyphicon glyphicon-' + page.icon"></span>
-                			{{page.name}}
-                		</a>
-                	</li>
-                </ul>
+            <div class="col-sm-5" id="linkcol">
+							<span class="link">
+								<a ui-sref='index'>
+									<span class="glyphicon glyphicon-home" />
+									Accueil
+								</a>
+							</span>
+							<span class="link">
+								<a ui-sref='index.video'>
+									<span class="glyphicon glyphicon-film" />
+									Projections JTX
+								</a>
+							</span>
+							<span class="link">
+								<a ui-sref='index.search'>
+									<span class="glyphicon glyphicon-search" />
+									Recherche
+								</a>
+							</span>
+							<span class="link" id="link-right">
+								<a ui-sref='index.admin'>
+									<span class="glyphicon glyphicon-cog" />
+									Administration
+								</a>
+							</span>
+
             </div>
-        </div>
-    </div>
 </div>

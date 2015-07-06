@@ -1,0 +1,25 @@
+.footer .container {
+  text-align:center;
+}
+
+div #navbar {
+  padding-top: 15px;
+}
+
+div #searchcol {
+  text-align:center;
+}
+
+div #linkcol {
+  text-align:right;
+  font-size: 1.25em;
+}
+
+div #linkcol .link {
+  border-left: solid 1pt;
+  padding:10px;
+}
+
+div #linkcol #link-right {
+  border-right: solid 1pt;
+}
