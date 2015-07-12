@@ -29,23 +29,31 @@ function($scope) {
     ],
     id : "1"
   };
+  $scope.config = {
+				sources: [
+					{src: "src/assets/videos/demons.mp4", type: "video/mp4"},
+				],
+				tracks: [
+					{
+						src: "src/assets/videos/demons.vtt",
+						kind: "subtitles",
+						srclang: "fr",
+						label: "Sous-titres",
+						default: ""
+					}
+				],
+				theme: "bower_components/videogular-themes-default/videogular.css",
+				plugins: {
+					//poster: "http://www.videogular.com/assets/images/videogular.png"
+				}
+			};
 }
 ])
 
 .directive('jtxVideoPlayer',['$timeout', function(executeAfterDOMRendering) {
 
   function link(scope) {
-    executeAfterDOMRendering(videojs("video-"+scope.videoObject.id, {
-      controls : true,
-      preload : 'metadata',
-      width : '680',
-      height : '440',
-      plugins : {
-        "resolutionSelector" : { "default_res" : "480" }
-      }
-    }, function(){
-      // Player (this) is initialized and ready.
-    }));
+
   }
 
   return {
