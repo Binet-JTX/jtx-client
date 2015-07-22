@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('jtx.video', [
-  //
+  "com.2fdevs.videogular",
+	"com.2fdevs.videogular.plugins.controls",
+	"com.2fdevs.videogular.plugins.overlayplay",
+	"com.2fdevs.videogular.plugins.poster",
+  "videogular.texttrack"
 ])
 
 .config(['$stateProvider',
@@ -19,32 +23,25 @@ function($stateProvider) {
 .controller('video.ctrl',
 ['$scope',
 function($scope) {
-  $scope.demons = {
-    files : [
-      { resolution : "1080",
-      src : "assets/videos/demonsdesylvie.mp4",
-      extension : "mp4",
-      subtitles : "assets/videos/demonsdesylvie.vtt",
-      }
-    ],
-    id : "1"
-  };
   $scope.config = {
 				sources: [
-					{src: "src/assets/videos/demons.mp4", type: "video/mp4"},
+					{src: "assets/videos/demons.mp4", type: "video/mp4"},
 				],
 				tracks: [
-					{
-						src: "src/assets/videos/demons.vtt",
-						kind: "subtitles",
-						srclang: "fr",
-						label: "Sous-titres",
-						default: ""
-					}
 				],
 				theme: "bower_components/videogular-themes-default/videogular.css",
 				plugins: {
 					//poster: "http://www.videogular.com/assets/images/videogular.png"
+          subtitle: [{
+            src: "assets/videos/demons.vtt",
+            kind: "subtitles",
+            srclang: "fr",
+            label: "Français",
+          }],
+          controls: {
+              "autohide": true,
+              "autohideTime": 3000
+          },
 				}
 			};
 }

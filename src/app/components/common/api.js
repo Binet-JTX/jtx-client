@@ -8,9 +8,7 @@ angular.module('jtx.api', [
     function ($location) {
         return {
             route: function (path) {
-                if (/localhost:300/.test($location.absUrl())) {
-                    return 'http://localhost/~camille/jtx-server/web/app_dev.php' + (path == '' ? '' : '/' + path);
-                } else if (/localhost/.test($location.absUrl())) {
+              if (/localhost/.test($location.absUrl())) {
                     return 'http://binet-jtx.com/dev/jtx-server/web/app_dev.php' + (path == '' ? '' : '/' + path);
                 } else {
                     return 'http://binet-jtx.com/dev/jtx-server/web/app_dev.php' + (path == '' ? '' : '/' + path);
