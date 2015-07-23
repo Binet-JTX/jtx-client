@@ -58,3 +58,13 @@ div #linkcol #link-right {
 		height: 409.5px;
 	}
 }
+
+/* Admin page */
+
+#adminPanel div .panel {
+  text-align:center;
+}
+
+#adminPanel div .panel-heading {
+  font-weight: bold;
+}

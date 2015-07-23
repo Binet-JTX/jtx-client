@@ -18,7 +18,7 @@ angular.module('jtx.admin', [
 .controller('admin.ctrl',
     ['$scope',
     function($scope) {
-      //
+      $scope.showAdminPanel = true;
     }
 ])
 ;
