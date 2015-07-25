@@ -9,8 +9,11 @@
         <div class="panel-heading">Gestion des événements</div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6">
               <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.add'>Ajout</a>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.edit({eventId:3})'>Modification</a>
             </div>
           </div>
         </div>
@@ -33,6 +36,7 @@
     <div class="panel-body">
       <div ui-view="">
         <p class="text-info">Pour administrer la base de données, clique sur un des modules ci-dessus.</p>
+        <alert ng-show="showSuccess" type="success">{{ success }}</alert>
       </div>
     </div>
   </div>

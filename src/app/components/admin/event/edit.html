@@ -1,8 +1,7 @@
 <div class="container">
-
-  <h4>Ajouter un événement</h4>
+  <h4>Modifier l'événement : {{event.title}} <small class="text-muted">(dernière modification le {{event.updated_at.format('DD/MM/YYYY à HH:mm')}})</small></h4>
   <div class="well">
-    <form ng-submit="addEvent(event)" name="addEventForm">
+    <form ng-submit="editEvent(event)" name="addEventForm">
       <div class="form-group">
         <label for="etitle">Titre</label>
         <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
@@ -78,10 +77,13 @@
         </div>
       </div>
       <div class="form-group">
-        <input class="form-control btn-primary" type="submit" value="Ajouter" />
+        <input class="form-control btn-primary" type="submit" value="Modifier" />
       </div>
       <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
       <alert ng-show="showSuccess" type="success">{{ success }}</alert>
     </form>
+    <div class="form-group">
+      <button class="form-control btn btn-danger"  ng-click="deleteEvent(event)">Supprimer l'événement</button>
+    </div>
   </div>
 </div>
