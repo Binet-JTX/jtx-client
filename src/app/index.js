@@ -8,6 +8,7 @@ angular.module('jtx', [
     'ngResource',
     'ui.router',
     'ui.bootstrap',
+    'ngTagsInput',
 
     'jtx.main',
     'jtx.video',
