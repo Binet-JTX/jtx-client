@@ -5,6 +5,7 @@
     <form ng-submit="addEvent(event)" name="addEventForm">
       <div class="form-group">
         <label for="etitle">Titre</label>
+        <small class="text-muted">Le titre de l'événement doit contenir le nom et l'année de l'événement.</small>
         <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
       </div>
       <div ng-show="addEventForm.$submitted || addEventForm.eTitle.$touched">
@@ -14,6 +15,7 @@
       </div>
       <div class="form-group">
         <label for="edescription">Description</label>
+        <small class="text-muted">Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.</small>
         <textarea class="form-control" type="textarea" id="edescription" ng-model="event.description">
         </textarea>
       </div>
@@ -80,8 +82,8 @@
       <div class="form-group">
         <input class="form-control btn-primary" type="submit" value="Ajouter" />
       </div>
-      <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
-      <alert ng-show="showSuccess" type="success">{{ success }}</alert>
     </form>
+    <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
+    <alert ng-show="showSuccess" type="success">{{ success }}</alert>
   </div>
 </div>

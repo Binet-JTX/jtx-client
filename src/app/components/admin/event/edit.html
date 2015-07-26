@@ -1,9 +1,10 @@
 <div class="container">
-  <h4>Modifier l'événement : {{event.title}} <small class="text-muted">(dernière modification le {{event.updated_at.format('DD/MM/YYYY à HH:mm')}})</small></h4>
+  <h4>Modifier l'événement : {{event.title}} <small class="text-muted">(dernière modification {{event.updated_at.fromNow()}})</small></h4>
   <div class="well">
     <form ng-submit="editEvent(event)" name="addEventForm">
       <div class="form-group">
         <label for="etitle">Titre</label>
+        <small class="text-muted">Le titre de l'événement doit contenir le nom et l'année de l'événement.</small>
         <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
       </div>
       <div ng-show="addEventForm.$submitted || addEventForm.eTitle.$touched">
@@ -13,6 +14,7 @@
       </div>
       <div class="form-group">
         <label for="edescription">Description</label>
+        <small class="text-muted">Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.</small>
         <textarea class="form-control" type="textarea" id="edescription" ng-model="event.description">
         </textarea>
       </div>
@@ -20,7 +22,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="ebegindate">Date de début</label>
-            <input type="text"  class="form-control" ng-model="event.beginDate_f"  placeholder="{{now.format('YYYY-MM-DD')}}" name="eBeginDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
+            <input type="date"  class="form-control" ng-model="event.beginDate_f"  placeholder="{{now.format('YYYY-MM-DD')}}" name="eBeginDate" required/>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eBeginDate.$touched">
             <div ng-show="addEventForm.eBeginDate.$error.required">
@@ -50,7 +52,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="eenddate">Date de fin</label>
-            <input type="text" class="form-control" ng-model="event.endDate_f" placeholder="{{now.format('YYYY-MM-DD')}}" name="eEndDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
+            <input type="date" class="form-control" ng-model="event.endDate_f" placeholder="{{now.format('YYYY-MM-DD')}}" name="eEndDate" required/>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eEndDate.$touched">
             <div ng-show="addEventForm.eEndDate.$error.required">
@@ -79,11 +81,11 @@
       <div class="form-group">
         <input class="form-control btn-primary" type="submit" value="Modifier" />
       </div>
-      <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
-      <alert ng-show="showSuccess" type="success">{{ success }}</alert>
     </form>
     <div class="form-group">
       <button class="form-control btn btn-danger"  ng-click="deleteEvent(event)">Supprimer l'événement</button>
     </div>
+    <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
+    <alert ng-show="showSuccess" type="success">{{ success }}</alert>
   </div>
 </div>

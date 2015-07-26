@@ -126,7 +126,7 @@ function($scope) {
     controller: ['$scope', function($scope) {
       $scope.object.begin_date = moment($scope.object.begin_date);
       $scope.object.end_date = moment($scope.object.end_date);
-      console.log($scope.object.begin_date);
+
       if ($scope.kind == null)
       $scope.kind = 'video';
       else if ($scope.kind == 'event')
