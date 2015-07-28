@@ -142,28 +142,20 @@ function($scope) {
     scope: {
       tags :'=ngModel'
     },
-    controller: ['$scope', '$resource', 'Tag', function($scope,$resource,Tag) {
-      $scope.tags= [
-        { key : 'Acteur', value : 'Alexandre Saint-Dizier'},
-        { key : 'Lieu', value : 'Lac' },
-        { key : 'Lieu', value : 'Local bas'},
-        { key : 'Catégorie', value : 'Musical'}
-      ];
-
-      $scope.tagsInput= [
-        { key : 'Acteur', value : 'Alexandre Saint-Dizier'},
-        { key : 'Lieu', value : 'Lac' },
-        { key : 'Lieu', value : 'Local bas'},
-        { key : 'Catégorie', value : 'Musical'}
-      ];
+    controller: ['$scope', '$resource', 'Tag', function($scope, $resource,Tag) {
+      $scope.tags=[
+        {key : 'Acteur',value : 'Alexandre'}
+      ]
 
       $scope.loadTags = function() {
         return Tag.query();
       }
 
-      $scope.addTag = function(tagToBeAdded) {
-        $scope.tagsInput.push(tagToBeAdded);
-        tagToBeAdded = null;
+      $scope.addTag = function() {
+        if ($scope.tagToBeAdded && $scope.tagToBeAdded.key && $scope.tagToBeAdded.value) {
+          $scope.tags.push($scope.tagToBeAdded);
+          $scope.tagToBeAdded = null;
+        }
       };
     }]
   }
