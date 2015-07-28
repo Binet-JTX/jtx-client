@@ -3,13 +3,11 @@
   <div class="well">
     <form ng-submit="editEvent(event)" name="addEventForm">
       <div class="form-group">
-        <label for="etitle">Titre</label>
-        <small class="text-muted">Le titre de l'événement doit contenir le nom et l'année de l'événement.</small>
+        <label for="etitle" tooltip="Le titre de l'événement doit contenir le nom et l'année de l'événement.">Titre</label>
         <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
       </div>
       <div class="form-group">
-        <label for="edescription">Description</label>
-        <small class="text-muted">Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.</small>
+        <label for="edescription" tooltip="Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.">Description</label>
         <textarea class="form-control" type="textarea" id="edescription" ng-model="event.description">
         </textarea>
       </div>

@@ -143,9 +143,7 @@ function($scope) {
       tags :'=ngModel'
     },
     controller: ['$scope', '$resource', 'Tag', function($scope, $resource,Tag) {
-      $scope.tags=[
-        {key : 'Acteur',value : 'Alexandre'}
-      ]
+      $scope.tags=[];
 
       $scope.loadTags = function() {
         return Tag.query();

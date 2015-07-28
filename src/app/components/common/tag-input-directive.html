@@ -1,6 +1,5 @@
-<div class="form-group">
+<div class="form-group" tooltip="Ajoute des tags en utilisant la barre si dessous. Si jamais tu ne trouve pas ce que tu veux parmi les tags existants, tu peux en créer un nouveau.">
   <label for="jtx-tag-input">Tags</label>
-  <small class="text-muted">Ajoute des tags en utilisant la barre si dessous. Si jamais tu ne trouve pas ce que tu veux parmi les tags existants, tu peux en créer un nouveau.
   <tags-input addFromAutocompleteOnly="true" id="jtx-tag-input" ng-model="tags" display-property="value" template="app/components/common/tag-display.html" min-length=2 placeholder="Ajouter un tag existant">
     <auto-complete source="loadTags()" template="app/components/common/tag-display.html" min-length=2></auto-complete>
   </tags-input>
@@ -11,7 +10,7 @@
     <select class="form-control" ng-model="tagToBeAdded.key">
       <option value="Acteur">Acteur</option>
       <option value="Réalisateur">Réalisateur</option>
-      <option value="Object">Objet</option>
+      <option value="Objet">Objet</option>
       <option value="Lieu">Lieu</option>
       <option value="Catégorie">Catégorie</option>
       <option value="JTX">JTX</option>

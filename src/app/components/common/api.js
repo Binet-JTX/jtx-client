@@ -30,9 +30,9 @@ angular.module('jtx.api', [
         return $resource(API.route('tags/:id'), {id: '@id'});
     }]
 )
-.factory('TagKey', ['API', '$resource',
+.factory('Video', ['API', '$resource',
     function(API, $resource) {
-        return $resource(API.route('tag/keys/:id'), {id: '@id'});
+        return $resource(API.route('video/:id'), {id: '@id'});
     }]
 )
 ;
