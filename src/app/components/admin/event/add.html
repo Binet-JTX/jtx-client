@@ -3,22 +3,16 @@
   <h4>Ajouter un événement</h4>
   <div class="well">
     <form ng-submit="addEvent(event)" name="addEventForm">
-      <div class="form-group">
+      <div class="form-group" tooltip="Le titre de l'événement doit contenir le nom et l'année de l'événement.">
         <label for="etitle">Titre</label>
-        <small class="text-muted">Le titre de l'événement doit contenir le nom et l'année de l'événement.</small>
         <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
       </div>
-      <div ng-show="addEventForm.$submitted || addEventForm.eTitle.$touched">
-        <div ng-show="addEventForm.eTitle.$error.required">
-          <alert type="danger">Le titre est obligatoire.</alert>
-        </div>
-      </div>
-      <div class="form-group">
+      <div class="form-group" tooltip="Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.">
         <label for="edescription">Description</label>
-        <small class="text-muted">Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.</small>
         <textarea class="form-control" type="textarea" id="edescription" ng-model="event.description">
         </textarea>
       </div>
+      <jtx-tag-input ng-model="event.tags"></jtx-tag-input>
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
@@ -26,9 +20,6 @@
             <input type="text"  class="form-control" ng-model="event.beginDate_f"  placeholder="{{now.format('YYYY-MM-DD')}}" name="eBeginDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eBeginDate.$touched">
-            <div ng-show="addEventForm.eBeginDate.$error.required">
-              <alert type="danger">La date de début est obligatoire.</alert>
-            </div>
             <div ng-show="addEventForm.eBeginDate.$error.pattern">
               <alert type="danger">Il faut rentrer une date.</alert>
             </div>
@@ -40,9 +31,6 @@
             <input ng-model="event.beginTime_f" class="form-control" name="eBeginHour" placeholder="{{now.format('HH:MM')}}" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" required></input>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eBeginHour.$touched">
-            <div ng-show="addEventForm.eBeginHour.$error.required">
-              <alert type="danger">L'heure de début est obligatoire.</alert>
-            </div>
             <div ng-show="addEventForm.eBeginHour.$error.pattern">
               <alert type="danger">Il faut rentrer une heure.</alert>
             </div>
@@ -56,9 +44,6 @@
             <input type="text" class="form-control" ng-model="event.endDate_f" placeholder="{{now.format('YYYY-MM-DD')}}" name="eEndDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eEndDate.$touched">
-            <div ng-show="addEventForm.eEndDate.$error.required">
-              <alert type="danger">La date de fin est obligatoire.</alert>
-            </div>
             <div ng-show="addEventForm.eBeginDate.$error.pattern">
               <alert type="danger">Il faut rentrer une date.</alert>
             </div>
@@ -70,9 +55,6 @@
             <input ng-model="event.endTime_f" class="form-control" name="eEndHour" placeholder="{{now.format('HH:MM')}}" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" required></input>
           </div>
           <div ng-show="addEventForm.$submitted || addEventForm.eendHour.$touched">
-            <div ng-show="addEventForm.eEndHour.$error.required">
-              <alert type="danger">L'heure' de fin est obligatoire.</alert>
-            </div>
             <div ng-show="addEventForm.eEndHour.$error.pattern">
               <alert type="danger">Il faut rentrer une heure.</alert>
             </div>
@@ -80,7 +62,7 @@
         </div>
       </div>
       <div class="form-group">
-        <input class="form-control btn-primary" type="submit" value="Ajouter" />
+        <input class="form-control btn-success" type="submit" value="Ajouter" />
       </div>
     </form>
     <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
