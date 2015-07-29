@@ -34,6 +34,7 @@ function($scope,$resource,Event) {
 
   $scope.addEvent = function (event) {
     var sentEvent = {title : event.title, description : event.description};
+    console.log(event);
 
     //Merge the date and time fields into one datetime JSON string
     var beginHours = event.beginTime_f.split(":")[0];
