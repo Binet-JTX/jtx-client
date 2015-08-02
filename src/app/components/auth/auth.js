@@ -70,7 +70,6 @@ angular.module('jtx.auth', [
                 return response || $q.when(response);
             },
             responseError: function(response) {
-                console.log(response);
                 if (response.status === 401) {
                     AuthService.logout();
                     // TODO: Redirect user to login page.

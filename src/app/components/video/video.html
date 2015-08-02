@@ -1,26 +1,5 @@
 <div class="row">
-	<div class="col-sm-10 col-sm-offset-1" style="text-align:center;">
-		<div class="videogular-contrainer">
-		<videogular vg-theme="config.theme">
-			<vg-media vg-src="config.sources" vg-tracks="config.tracks">
-			</vg-media>
-			<vg-controls vg-autohide='config.plugins.autohide' vg-autohide-time='config.plugins.autohideTime'>
-				<vg-play-pause-button></vg-play-pause-button>
-				<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-				<vg-scrub-bar>
-					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-				</vg-scrub-bar>
-				<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-				<vg-volume>
-					<vg-mute-button></vg-mute-button>
-					<vg-volume-bar></vg-volume-bar>
-				</vg-volume>
-				<vg-text vg-text-src="config.plugins.subtitle"></vg-text> <!-- vg-text directive with subtile config var -->
-				<vg-fullscreen-button></vg-fullscreen-button>
-			</vg-controls>
-
-			<vg-overlay-play></vg-overlay-play>
-		</videogular>
-	</div>
+	<div class="col-sm-10 col-sm-offset-1">
+		<jtx-video-player></jtx-video-player>
 	</div>
 </div>

@@ -1,5 +1,23 @@
-<video id="video-{{videoObject.id}}" class="video-js vjs-default-skin">
-  <source ng-repeat="file in videoObject.files" data-res="{{file.resolution}}" src="{{file.src}}" type="video/{{file.extension}}" />
-  <track ng-if="videoObject.hasOwnProperty(subtitles)" kind="subtitles" src="{{videoObject.subtitles}}" srclang="fr"
-       label="Français">
-</video>
+<div class="videogular-contrainer">
+<videogular vg-theme="config.theme" vg-player-ready="onPlayerReady($API)">
+  <vg-media vg-src="config.sources" vg-tracks="config.tracks">
+  </vg-media>
+  <vg-controls vg-autohide='config.plugins.controls.autohide' vg-autohide-time='config.plugins.controls.autohideTime'>
+    <vg-play-pause-button></vg-play-pause-button>
+    <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+    </vg-scrub-bar>
+    <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+    <vg-volume>
+      <vg-mute-button></vg-mute-button>
+      <vg-volume-bar></vg-volume-bar>
+    </vg-volume>
+    <vg-fullscreen-button></vg-fullscreen-button>
+  </vg-controls>
+
+  <vg-overlay-play></vg-overlay-play>
+  <vg-buffering></vg-buffering>
+</videogular>
+    <jtx-subtitles-button subtitles='config.tracks'></jtx-subtitles-button>
+</div>
