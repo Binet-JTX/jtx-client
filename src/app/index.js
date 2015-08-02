@@ -15,6 +15,7 @@ angular.module('jtx', [
     'jtx.search',
     'jtx.api',
     'jtx.admin',
+    'jtx.auth'
 ])
 
 .config(['$urlRouterProvider',
@@ -22,4 +23,10 @@ angular.module('jtx', [
         $urlRouterProvider.otherwise('/');
     }
 ])
+
+.config(['$httpProvider',
+    function ($httpProvider) {
+        $httpProvider.interceptors.push('auth.interceptor');
+    }]
+)
 ;

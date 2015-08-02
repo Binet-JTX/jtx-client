@@ -37,8 +37,8 @@ function($stateProvider) {
 ])
 
 .controller('main.ctrl.base',
-['$scope',
-function($scope) {
+['$scope', 'auth.service',
+function($scope,AuthService) {
   $scope.hello = 'Hello';
   moment.locale('fr', {
     months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
@@ -99,6 +99,8 @@ function($scope) {
     }
   });
   moment.locale('fr');
+
+  AuthService.login({email:'denis.merigoux@polytechnique.edu', password:'denis'}).then(function() {console.log('Je suis connecté !')});
 }
 ])
 

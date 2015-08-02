@@ -9,9 +9,9 @@ angular.module('jtx.api', [
         return {
             route: function (path) {
               if (/localhost/.test($location.absUrl())) {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path) ;
                 } else {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path) ;
                 }
             }
         };
@@ -21,8 +21,8 @@ angular.module('jtx.api', [
 .factory('Event', ['API', '$resource',
     function(API, $resource) {
         return $resource(API.route('events/:id'), {id: '@id'}, {
-            update: {method: 'PUT', url: API.route('events/:id')},
-        });
+            update: {method: 'PUT', url: API.route('events/:id/')},
+        }, {stripTrailingSlashes: false});
     }]
 )
 .factory('Tag', ['API', '$resource',
