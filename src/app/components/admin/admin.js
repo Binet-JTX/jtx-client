@@ -11,15 +11,12 @@ angular.module('jtx.admin', [
                 url: 'admin',
                 templateUrl: 'app/components/admin/admin.html',
                 controller: 'admin.ctrl'
-            })
-        ;
+            });
     }
 ])
 
-.controller('admin.ctrl',
-    ['$scope',
+.controller('admin.ctrl', ['$scope',
     function($scope) {
-      $scope.showAdminPanel = true;
+        $scope.showAdminPanel = true;
     }
-])
-;
+]);

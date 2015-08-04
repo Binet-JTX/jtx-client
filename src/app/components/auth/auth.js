@@ -6,7 +6,7 @@ angular.module('jtx.auth', [
 ])
 
 .factory('auth.service', ['$injector', '$localStorage', '$q', 'API', '$location', '$rootScope',
-    function ($injector, $localStorage, $q, API, $location, $rootScope) {
+    function($injector, $localStorage, $q, API, $location, $rootScope) {
         if ($localStorage.auth === undefined) {
             $localStorage.auth = {
                 token: null,
@@ -47,7 +47,7 @@ angular.module('jtx.auth', [
 ])
 
 .factory('auth.interceptor', ['auth.service', '$q',
-    function (AuthService, $q) {
+    function(AuthService, $q) {
         return {
             request: function(config) {
                 config.headers = config.headers || {};
@@ -77,4 +77,5 @@ angular.module('jtx.auth', [
                 return $q.reject(response);
             }
         };
-}]);
+    }
+]);

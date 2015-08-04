@@ -1,67 +1,81 @@
 <div class="container-fluid">
-  <div class='row'>
-    <div class="col-md-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading" style="text-align:center"><h3 class=panel-title>Serveur JTX</h3></div>
-        <div class="panel-body">
-          <p class="text-muted">Localise la vidéo à ajouter sur le serveur du JTX. Tu ne peux pas sélectionner des vidéos déjà ajoutées. Pour modifier, clic droit puis « Ouvrir le lien dans un nouvel onglet » puis modifie la description.</p>
-          <div></div>
+    <div class='row'>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align:center">
+                    <h3 class=panel-title>Serveur JTX</h3>
+                </div>
+                <div class="panel-body">
+                    <p class="text-muted">Localise la vidéo à ajouter sur le serveur du JTX. Tu ne peux pas sélectionner des vidéos déjà ajoutées. Pour modifier, clic droit puis « Ouvrir le lien dans un nouvel onglet » puis modifie la description.</p>
+                    <div></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align:center">
+                    <h3 class=panel-title>Vidéo choisie</h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        Adresse :
+                        <span style='float:right'></span>
+                    </p>
+                    <input  type='hidden'/>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align:center">
+                    <h3 class=panel-title>Métadonnées</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group" tooltip="Inscris ici les métadonnées de la vidéo. Seul le titre est obligatoire, mais le mieux est de remplir le maximum de champs possibles.">
+                        <label for="videoTitle">Titre</label>
+                        <input class="form-control" id="videoTitle" placeholder="Nom du fichier ou nom d'usage du clip" type="text">
+                    </div>
+                    <div class="form-group" tooltip="Entre ici la date de première projection de la vidéo.">
+                        <label for="videoDate">Date</label>
+                        <input class="form-control" id="videoDate" placeholder="2015-08-01" type="text">
+                    </div>
+                    <div class="form-group" tooltip="Rajoute des vidéos associées à celle que tu es en train d'ajouter.">
+                        <label for="videoRelated">Similaire(s)</label>
+                        <input class="form-control" id="videoRelated" type="text">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" style="text-align:center"><h3 class=panel-title>Vidéo choisie</h3></div>
-        <div class="panel-body">
-          <p> Adresse : <span style='float:right'>
-          </span></p>
-          <input type='hidden'/>
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align:center">
+                    <h3 class=panel-title>Lecteur vidéo</h3>
+                </div>
+                <div class="panel-body" style="text-align:center">
+                    <p class="text-muted">Vérifie si la vidéo correspond bien au fichier puis taggue la tout en la regardant.</p>
+                    <jtx-video-player></jtx-video-player>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align:center">
+                    <h3 class=panel-title>Tags et description</h3>
+                </div>
+                <div class="panel-body">
+                    <jtx-tag-input ng-model="video.tags"></jtx-tag-input>
+                    <div class="form-group" tooltip="Écris la description du clip en texte plein. N'hésite pas à ajouter des informations comme la source de la bande son, des anecdotes sur le tournage, etc.">
+                        <label for="videoDescription">Description</label>
+                        <textarea class="form-control" name="description" rows="3" spellcheck="true"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary" id="panelposter">
+                <div class="panel-heading" style="text-aligne:center">
+                    <h3 class=panel-title>Choix du poster</h3>
+                </div>
+                <div class="panel-body">
+                    Vide.
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" style="text-align:center"><h3 class=panel-title>Métadonnées</h3></div>
-        <div class="panel-body">
-          <div class="form-group" tooltip="Inscris ici les métadonnées de la vidéo. Seul le titre est obligatoire, mais le mieux est de remplir le maximum de champs possibles.">
-            <label for="videoTitle">Titre</label>
-            <input type="text" class="form-control" id="videoTitle" placeholder="Nom du fichier ou nom d'usage du clip" >
-          </div>
-          <div class="form-group" tooltip="Entre ici la date de première projection de la vidéo.">
-            <label for="videoDate">Date</label>
-            <input type="text" class="form-control" id="videoDate" placeholder="2015-08-01" >
-          </div>
-          <div class="form-group" tooltip="Rajoute des vidéos associées à celle que tu es en train d'ajouter.">
-            <label for="videoRelated">Similaire(s)</label>
-            <input type="text" id="videoRelated" class="form-control">
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="col-md-8">
-      <div class="panel panel-primary">
-        <div class="panel-heading" style="text-align:center"><h3 class=panel-title>Lecteur vidéo</h3></div>
-        <div class="panel-body" style="text-align:center">
-          <p class="text-muted">Vérifie si la vidéo correspond bien au fichier puis taggue la tout en la regardant.</p>
-          <jtx-video-player></jtx-video-player>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" style="text-align:center"><h3 class=panel-title>Tags et description</h3></div>
-        <div class="panel-body">
-          <jtx-tag-input ng-model="video.tags"></jtx-tag-input>
-          <div class="form-group" tooltip="Écris la description du clip en texte plein. N'hésite pas à ajouter des informations comme la source de la bande son, des anecdotes sur le tournage, etc.">
-            <label for="videoDescription">Description</label>
-            <textarea name="description" class="form-control" rows="3" spellcheck="true"></textarea>
-          </div>
-        </div>
-      </div>
-      <div id="panelposter" class="panel panel-primary">
-        <div class="panel-heading" style="text-aligne:center"><h3 class=panel-title>Choix du poster</h3></div>
-        <div class="panel-body">
-          Vide.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class='well' style='text-align:center'>
-    <button type = 'submit' id = 'bouttonajoutvideo' class = 'btn btn-danger'>Ajouter la vidéo</button>
+    <div class='well' style='text-align:center'>
+        <button ='bouttonajoutvideo' ='btn btn-danger' ='submit' class id type>Ajouter la vidéo</button>
 
-  </div>
+    </div>
 </form>

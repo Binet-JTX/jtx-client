@@ -5,13 +5,13 @@ angular.module('jtx.api', [
 ])
 
 .factory('API', ['$location',
-    function ($location) {
+    function($location) {
         return {
-            route: function (path) {
-              if (/localhost/.test($location.absUrl())) {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path) ;
+            route: function(path) {
+                if (/localhost/.test($location.absUrl())) {
+                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
                 } else {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path) ;
+                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
                 }
             }
         };
@@ -19,22 +19,35 @@ angular.module('jtx.api', [
 ])
 
 .factory('Event', ['API', '$resource',
-    function(API, $resource) {
-        return $resource(API.route('events/:id'), {id: '@id'}, {
-            update: {method: 'PUT', url: API.route('events/:id/')},
-        }, {stripTrailingSlashes: false});
-    }]
-)
-.factory('Tag', ['API', '$resource',
-    function(API, $resource) {
-        return $resource(API.route('tags/:id'), {id: '@id'},  {
-            update: {method: 'PUT', url: API.route('tags/:id')},
-        });
-    }]
-)
-.factory('Video', ['API', '$resource',
-    function(API, $resource) {
-        return $resource(API.route('video/:id'), {id: '@id'});
-    }]
-)
-;
+        function(API, $resource) {
+            return $resource(API.route('events/:id'), {
+                id: '@id'
+            }, {
+                update: {
+                    method: 'PUT',
+                    url: API.route('events/:id/')
+                },
+            }, {
+                stripTrailingSlashes: false
+            });
+        }
+    ])
+    .factory('Tag', ['API', '$resource',
+        function(API, $resource) {
+            return $resource(API.route('tags/:id'), {
+                id: '@id'
+            }, {
+                update: {
+                    method: 'PUT',
+                    url: API.route('tags/:id')
+                },
+            });
+        }
+    ])
+    .factory('Video', ['API', '$resource',
+        function(API, $resource) {
+            return $resource(API.route('video/:id'), {
+                id: '@id'
+            });
+        }
+    ]);

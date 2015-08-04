@@ -19,14 +19,13 @@ angular.module('jtx', [
 ])
 
 .config(['$urlRouterProvider',
-    function ($urlRouterProvider) {
+    function($urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
     }
 ])
 
 .config(['$httpProvider',
-    function ($httpProvider) {
+    function($httpProvider) {
         $httpProvider.interceptors.push('auth.interceptor');
-    }]
-)
-;
+    }
+]);

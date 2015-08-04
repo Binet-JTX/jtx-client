@@ -1,55 +1,58 @@
 <div class="container-fluid">
 
-  <div class="page-header">
-    <h3>Administration <button ng-click="showAdminPanel = !(showAdminPanel)" class="btn btn-default" >{{showAdminPanel ? 'Masquer' : 'Afficher'}} la liste des modules</button></h3>
-  </div>
-  <div class="row" ng-show="showAdminPanel" id="adminPanel">
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">Gestion des événements</div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6">
-              <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.add'>Ajout</a>
+    <div class="page-header">
+        <h3>Administration
+            <button class="btn btn-default" ng-click="showAdminPanel = !(showAdminPanel)">{{showAdminPanel ? 'Masquer' : 'Afficher'}}
+                la liste des modules</button>
+        </h3>
+    </div>
+    <div class="row" id="adminPanel" ng-show="showAdminPanel">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Gestion des événements</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.add'>Ajout</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-default" disabled ui-sref-active='btn-primary' ui-sref='index.admin.event.edit()'>Modification</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-              <button disabled class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.edit()'>Modification</a>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">Gestion des tags</div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.tag.edit'>Modification</a>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Gestion des tags</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.tag.edit'>Modification</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">Gestion des Vidéo</div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-6">
-              <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.video.add'>Ajout</a>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Gestion des Vidéo</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.video.add'>Ajout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div ui-view="">
-        <p class="text-info">Pour administrer la base de données, clique sur un des modules ci-dessus.</p>
-        <alert ng-show="showSuccess" type="success">{{ success }}</alert>
-      </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div ui-view="">
+                <p class="text-info">Pour administrer la base de données, clique sur un des modules ci-dessus.</p>
+                <alert ng-show="showSuccess" type="success">{{ success }}</alert>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

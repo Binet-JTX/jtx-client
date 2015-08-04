@@ -1,71 +1,70 @@
 <div class="container">
 
-  <h4>Ajouter un événement</h4>
-  <div class="well">
-    <form ng-submit="addEvent(event)" name="addEventForm">
-      <div class="form-group" tooltip="Le titre de l'événement doit contenir le nom et l'année de l'événement.">
-        <label for="etitle">Titre</label>
-        <input class="form-control" type="text" id="etitle" name="eTitle" ng-model="event.title" required></input>
-      </div>
-      <div class="form-group" tooltip="Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.">
-        <label for="edescription">Description</label>
-        <textarea class="form-control" type="textarea" id="edescription" ng-model="event.description">
-        </textarea>
-      </div>
-      <jtx-tag-input ng-model="event.tags"></jtx-tag-input>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="ebegindate">Date de début</label>
-            <input type="text"  class="form-control" ng-model="event.beginDate_f"  placeholder="{{now.format('YYYY-MM-DD')}}" name="eBeginDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
-          </div>
-          <div ng-show="addEventForm.$submitted || addEventForm.eBeginDate.$touched">
-            <div ng-show="addEventForm.eBeginDate.$error.pattern">
-              <alert type="danger">Il faut rentrer une date.</alert>
+    <h4>Ajouter un événement</h4>
+    <div class="well">
+        <form name="addEventForm" ng-submit="addEvent(event)">
+            <div class="form-group" tooltip="Le titre de l'événement doit contenir le nom et l'année de l'événement.">
+                <label for="etitle">Titre</label>
+                <input class="form-control" id="etitle" name="eTitle" ng-model="event.title" required type="text"></input>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="ebegindate">Heure de début</label>
-            <input ng-model="event.beginTime_f" class="form-control" name="eBeginHour" placeholder="{{now.format('HH:MM')}}" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" required></input>
-          </div>
-          <div ng-show="addEventForm.$submitted || addEventForm.eBeginHour.$touched">
-            <div ng-show="addEventForm.eBeginHour.$error.pattern">
-              <alert type="danger">Il faut rentrer une heure.</alert>
+            <div class="form-group" tooltip="Bref récapitulatif de l'événement, avec éventuellement quelques faits marquants.">
+                <label for="edescription">Description</label>
+                <textarea class="form-control" id="edescription" ng-model="event.description" type="textarea"></textarea>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="eenddate">Date de fin</label>
-            <input type="text" class="form-control" ng-model="event.endDate_f" placeholder="{{now.format('YYYY-MM-DD')}}" name="eEndDate" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" required/>
-          </div>
-          <div ng-show="addEventForm.$submitted || addEventForm.eEndDate.$touched">
-            <div ng-show="addEventForm.eBeginDate.$error.pattern">
-              <alert type="danger">Il faut rentrer une date.</alert>
+            <jtx-tag-input ng-model="event.tags"></jtx-tag-input>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="ebegindate">Date de début</label>
+                        <input class="form-control" name="eBeginDate" ng-model="event.beginDate_f" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" placeholder="{{now.format('YYYY-MM-DD')}}" required type="text"/>
+                    </div>
+                    <div ng-show="addEventForm.$submitted || addEventForm.eBeginDate.$touched">
+                        <div ng-show="addEventForm.eBeginDate.$error.pattern">
+                            <alert type="danger">Il faut rentrer une date.</alert>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="ebegindate">Heure de début</label>
+                        <input class="form-control" name="eBeginHour" ng-model="event.beginTime_f" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" placeholder="{{now.format('HH:MM')}}" required></input>
+                    </div>
+                    <div ng-show="addEventForm.$submitted || addEventForm.eBeginHour.$touched">
+                        <div ng-show="addEventForm.eBeginHour.$error.pattern">
+                            <alert type="danger">Il faut rentrer une heure.</alert>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="eenddate">Heure de fin</label>
-            <input ng-model="event.endTime_f" class="form-control" name="eEndHour" placeholder="{{now.format('HH:MM')}}" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" required></input>
-          </div>
-          <div ng-show="addEventForm.$submitted || addEventForm.eendHour.$touched">
-            <div ng-show="addEventForm.eEndHour.$error.pattern">
-              <alert type="danger">Il faut rentrer une heure.</alert>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="eenddate">Date de fin</label>
+                        <input class="form-control" name="eEndDate" ng-model="event.endDate_f" ng-pattern="/^\d{4}-(0\d|1[12])-([0-2]\d|3[01])$/" placeholder="{{now.format('YYYY-MM-DD')}}" required type="text"/>
+                    </div>
+                    <div ng-show="addEventForm.$submitted || addEventForm.eEndDate.$touched">
+                        <div ng-show="addEventForm.eBeginDate.$error.pattern">
+                            <alert type="danger">Il faut rentrer une date.</alert>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="eenddate">Heure de fin</label>
+                        <input class="form-control" name="eEndHour" ng-model="event.endTime_f" ng-pattern="/^([0-1][0-9]|2[0-3])\:[0-5][0-9]$/" placeholder="{{now.format('HH:MM')}}" required></input>
+                    </div>
+                    <div ng-show="addEventForm.$submitted || addEventForm.eendHour.$touched">
+                        <div ng-show="addEventForm.eEndHour.$error.pattern">
+                            <alert type="danger">Il faut rentrer une heure.</alert>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <input class="form-control btn-success" type="submit" value="Ajouter" />
-      </div>
-    </form>
-    <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
-    <alert ng-show="showSuccess" type="success">{{ success }}</alert>
-  </div>
+            <div class="form-group">
+                <input  class="form-control btn-success" type="submit" value="Ajouter"/>
+            </div>
+        </form>
+        <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
+        <alert ng-show="showSuccess" type="success">{{ success }}</alert>
+    </div>
 </div>

@@ -1,17 +1,29 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3">
-      <img ng-src="{{ object.poster.file.path }}" class="img-responsive" />
+    <div class="row">
+        <div class="col-sm-3">
+            <img  class="img-responsive" ng-src="{{ object.poster.file.path }}"/>
+        </div>
+        <div class="col-sm-9">
+            <h4>{{ object.title }}</h4><br/>
+            <div ng-switch="kind">
+                <p ng-switch-when="event">Du
+                    {{object.begin_date.format('LL')}}
+                    au
+                    {{object.end_date.format('LL')}}
+                </p>
+                <p ng-switch-default>Le
+                    {{ object.date | date }}
+                </p>
+            </div>
+            <p>{{ object.description | limitTo:100 }}</p>
+            <p>
+                <span ng-repeat='tag in object.tags'>|{{tag.key.name}}
+                    :
+                    {{tag.value}}|</span>
+            </p>
+            <h6 class="pull-right">
+                <a ui-sref='index.admin.{{kind}}.edit({eventId : {{object.id}}})'>Modifier</a>
+            </h6>
+        </div>
     </div>
-    <div class="col-sm-9">
-      <h4>{{ object.title }}</h4><br />
-      <div ng-switch="kind">
-        <p ng-switch-when="event">Du {{object.begin_date.format('LL')}} au {{object.end_date.format('LL')}}</p>
-        <p ng-switch-default>Le {{ object.date | date }}<p>
-      </div>
-      <p>{{ object.description | limitTo:100 }}</p>
-      <p><span ng-repeat='tag in object.tags'>|{{tag.key.name}} : {{tag.value}}|</span></p>
-      <h6 class="pull-right"><a ui-sref='index.admin.{{kind}}.edit({eventId : {{object.id}}})'>Modifier</a></h6>
-    </div>
-  </div>
 </div>

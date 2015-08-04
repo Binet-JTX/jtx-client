@@ -1,27 +1,27 @@
 <div class="form-group" tooltip="Ajoute des tags en utilisant la barre si dessous. Si jamais tu ne trouve pas ce que tu veux parmi les tags existants, tu peux en créer un nouveau.">
-  <label for="jtx-tag-input">Tags</label>
-  <tags-input add-from-autocomplete-only="true" id="jtx-tag-input" ng-model="tags" display-property="value" template="app/components/common/tag-input/tag-display.html" min-length=2 placeholder="Ajouter un tag existant">
-    <auto-complete source="loadTags()" template="app/components/common/tag-input/tag-display-autocomplete.html" min-length=2></auto-complete>
-  </tags-input>
+    <label for="jtx-tag-input">Tags</label>
+    <tags-input add-from-autocomplete-only="true" display-property="value" id="jtx-tag-input" min-length=2 ng-model="tags" placeholder="Ajouter un tag existant" template="app/components/common/tag-input/tag-display.html">
+        <auto-complete min-length=2 source="loadTags()" template="app/components/common/tag-input/tag-display-autocomplete.html"></auto-complete>
+    </tags-input>
 </div>
 <div class="form-inline" style="text-align:center;">
-  <div class="form-group">
-    <label for="jtx-tag-input-add" class="sr-only">Ajouter un tag (catégorie) :</label>
-    <select class="form-control" ng-model="tagToBeAdded.key" tooltip="Type de tag">
-      <option value="Acteur">Acteur</option>
-      <option value="Réalisateur">Réalisateur</option>
-      <option value="Objet">Objet</option>
-      <option value="Lieu">Lieu</option>
-      <option value="Catégorie">Catégorie</option>
-      <option value="JTX">JTX</option>
-      <option value="Binet">Binet</option>
-      <option value="Autre">Autre</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="jtx-tag-input-add-text">Ajouter un tag (texte) :</label>
-    <input ng-model="tagToBeAdded.value" class="form-control" id="jtx-tag-input-add-text" type='text' placeholder='Nouveau tag'></input>
-  </div>
-  <a class="btn btn-primary" ng-click='addTag()'>Ajouter</a>
+    <div class="form-group">
+        <label class="sr-only" for="jtx-tag-input-add">Ajouter un tag (catégorie) :</label>
+        <select class="form-control" ng-model="tagToBeAdded.key" tooltip="Type de tag">
+            <option value="Acteur">Acteur</option>
+            <option value="Réalisateur">Réalisateur</option>
+            <option value="Objet">Objet</option>
+            <option value="Lieu">Lieu</option>
+            <option value="Catégorie">Catégorie</option>
+            <option value="JTX">JTX</option>
+            <option value="Binet">Binet</option>
+            <option value="Autre">Autre</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="jtx-tag-input-add-text">Ajouter un tag (texte) :</label>
+        <input class="form-control" id="jtx-tag-input-add-text" ng-model="tagToBeAdded.value" placeholder='Nouveau tag' type='text'></input>
+    </div>
+    <a class="btn btn-primary" ng-click='addTag()'>Ajouter</a>
 </div>
 <br>
