@@ -35,8 +35,8 @@ angular.module('jtx.main', [
     }
 ])
 
-.controller('main.ctrl.base', ['$scope', 'auth.service',
-    function($scope, AuthService) {
+.controller('main.ctrl.base', ['$scope', '$state',
+    function($scope,$state) {
         $scope.hello = 'Hello';
         moment.locale('fr', {
             months: "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
@@ -98,16 +98,16 @@ angular.module('jtx.main', [
         });
         moment.locale('fr');
 
-        AuthService.login({
-            email: 'denis.merigoux@polytechnique.edu',
-            password: 'denis'
-        }).then();
+
     }
 ])
 
-.controller('main.ctrl.navbar', ['$scope',
-    function($scope) {
-        $scope.search = '';
+.controller('main.ctrl.navbar', ['$scope', 'auth.service', '$state',
+    function($scope, AuthService, $state) {
+        $scope.logout = function() {
+            AuthService.logout();
+            $state.go('index.login');
+        }
     }
 ])
 

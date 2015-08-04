@@ -16,6 +16,5 @@ angular.module('jtx.search', [
 .controller('searchResults.ctrl', ['$scope', '$resource', 'Event',
     function($scope, $resource, Event) {
         $scope.events = Event.query();
-        console.log($scope.events);
     }
 ]);

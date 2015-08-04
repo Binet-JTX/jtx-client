@@ -5,6 +5,39 @@ angular.module('jtx.auth', [
     'jtx.api'
 ])
 
+.config(['$stateProvider',
+    function($stateProvider) {
+        $stateProvider
+            .state('index.login', {
+                url: 'login',
+                templateUrl: 'app/components/auth/login.html',
+                controller: 'auth.login.ctrl'
+            });
+    }
+])
+
+.controller('auth.login.ctrl', ['$scope', '$resource', 'auth.service',
+    function($scope, $resource, AuthService) {
+        $scope.customLogin = function(credentials) {
+            $scope.showErrors = false;
+            AuthService.login(credentials).then(
+                function(success) {
+                    $state.go('index.home');
+                },
+                function(errors) {
+                    if (errors[0] = "Unable to login with provided credentials.") {
+                        $scope.errors = "Le mot de passe ou l'e-mail donnés sont incorrects."
+                        $scope.credentials.password = "";
+                    } else {
+                        $scope.errors = errors;
+                    }
+                    $scope.showErrors = true;
+                });
+        }
+
+    }
+])
+
 .factory('auth.service', ['$injector', '$localStorage', '$q', 'API', '$location', '$rootScope',
     function($injector, $localStorage, $q, API, $location, $rootScope) {
         if ($localStorage.auth === undefined) {
@@ -20,13 +53,12 @@ angular.module('jtx.auth', [
                         $localStorage.auth.token = response.data.token;
                         //$localStorage.auth.user = response.data.user;
                         $location.path('/');
-                        return response.data.user;
+                        return $q.reject(response);
                     },
                     function(response) {
                         $localStorage.auth.token = null;
                         $localStorage.auth.user = null;
-                        //$location.path('/login');
-                        return $q.reject();
+                        return $q.reject(response);
                     });
             },
             logout: function() {
@@ -65,14 +97,14 @@ angular.module('jtx.auth', [
             response: function(response) {
                 if (response.status === 401) {
                     AuthService.logout();
-                    // TODO: Redirect user to login page.
+                    $state.go('index.login');
                 }
                 return response || $q.when(response);
             },
             responseError: function(response) {
                 if (response.status === 401) {
                     AuthService.logout();
-                    // TODO: Redirect user to login page.
+                    $state.go('index.login');
                 }
                 return $q.reject(response);
             }
