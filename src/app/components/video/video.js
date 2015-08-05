@@ -26,73 +26,63 @@ angular.module('jtx.video', [
 ])
 
 .directive('jtxVideoPlayer', function() {
-
     return {
         restrict: 'E',
         templateUrl: 'app/components/video/video-player.html',
         scope: {
             video: '='
         },
-        controller: ['$scope', function($scope) {
-            $scope.API = null;
-
-            $scope.onPlayerReady = function(API) {
-                $scope.API = API;
-            };
-
-            $scope.config = {
-                sources: [{
-                    src: "assets/videos/demons.mp4",
-                    type: "video/mp4"
-                }, ],
-                tracks: [{
-                    src: "assets/videos/demons.vtt",
-                    kind: "subtitles",
-                    srclang: "fr",
-                    label: "Français",
-                    default: true
-                }],
-                theme: "bower_components/videogular-themes-default/videogular.css",
-                plugins: {
-                    //poster: "http://www.videogular.com/assets/images/videogular.png"
-                    controls: {
-                        "autohide": true,
-                        "autohideTime": 3000
-                    },
-                }
-            };
-
-        }]
+        controller: 'video.player.ctrl'
     };
 })
 
-.directive("jtxSubtitlesButton", function() {
-    return {
-        restrict: "E",
-        require: "^videogular",
-        scope: {
-            subtitles: '='
-        },
-        template: "<a ng-click='toggleSubtitles()'>Sous-titres</a>",
-        controller: ['$scope', function($scope) {
-            $scope.savedSubtitles = $scope.subtitles;
-            $scope.toggleSubtitles = function() {
-                var API = $scope.$parent.API;
-                if ($scope.subtitles == null) {
-                    var currentTime = API.currentTime
-                    API.stop();
-                    $scope.subtitles = $scope.savedSubtitles;
-                    console.log("Sous-titres activés");
-                    API.seekTime(currentTime / 1000);
-                    API.play();
-                } else {
-                    var currentTime = API.currentTime
-                    $scope.subtitles = null;
-                    console.log("Sous-titres désactivés");
-                    API.seekTime(currentTime / 1000);
-                    API.play();
-                }
-            }
-        }]
+.controller('video.player.ctrl', ['$scope', function($scope) {
+    var controller = this
+    controller.API = null;
+
+    controller.onPlayerReady = function(API) {
+        controller.API = API;
+        console.log("Mythe");
+    };
+
+    controller.config = {
+        sources: [{
+            src: "assets/videos/demons.mp4",
+            type: "video/mp4"
+        }, ],
+        tracks: [{
+            src: "assets/videos/demons.vtt",
+            kind: "subtitles",
+            srclang: "fr",
+            label: "Français",
+            default: true
+        }],
+        theme: "bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            //poster: "http://www.videogular.com/assets/images/videogular.png"
+            controls: {
+                "autohide": true,
+                "autohideTime": 3000
+            },
+        }
+    };
+
+    controller.savedSubtitles = controller.config.tracks[0];
+
+    controller.toggleSubtitles = function() {
+        controller.API.changeSource();
+        // if (!controller.config.tracks) {
+        //     var currentTime = controller.API.currentTime
+        //     controller.API.stop();
+        //     controller.API.tracks = [$scope.savedSubtitles];
+        //     controller.API.seekTime(currentTime / 1000);
+        //     controller.API.play.bind(controller.API);
+        // } else {
+        //     var currentTime = controller.API.currentTime
+        //     delete controller.API.tracks;
+        //     controller.API.seekTime(currentTime / 1000);
+        //     controller.API.play.bind(controller.API);
+        // }
+        // console.log(controller.config.tracks,controller.API.tracks);
     }
-});
+}]);
