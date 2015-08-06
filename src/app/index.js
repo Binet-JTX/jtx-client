@@ -24,6 +24,7 @@ angular.module('jtx', [
     }
 ])
 
+//Enable the interception of queries by the auth.interceptor factory (auth.js)
 .config(['$httpProvider',
     function($httpProvider) {
         $httpProvider.interceptors.push('auth.interceptor');

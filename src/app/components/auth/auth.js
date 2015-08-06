@@ -38,6 +38,7 @@ angular.module('jtx.auth', [
     }
 ])
 
+//The AuthService object created by this factory offers methods related to longin and logout
 .factory('auth.service', ['$injector', '$localStorage', '$q', 'API', '$location', '$rootScope',
     function($injector, $localStorage, $q, API, $location, $rootScope) {
         if ($localStorage.auth === undefined) {
@@ -51,9 +52,9 @@ angular.module('jtx.auth', [
                 return $injector.get('$http').post(API.route('api-token-auth/'), credentials).then(
                     function(response) {
                         $localStorage.auth.token = response.data.token;
-                        //$localStorage.auth.user = response.data.user;
                         $location.path('/');
                         return $q.reject(response);
+                        //Returns a promise object containing the token
                     },
                     function(response) {
                         $localStorage.auth.token = null;
@@ -78,6 +79,8 @@ angular.module('jtx.auth', [
     }
 ])
 
+//The auth.interceptor object adds the security token delivred at user login
+//to all the queries directed at the server API
 .factory('auth.interceptor', ['auth.service', '$q','$injector',
     function(AuthService, $q,$injector) {
         return {
@@ -86,12 +89,6 @@ angular.module('jtx.auth', [
                 if (AuthService.isAuthenticated() && !/\/off\//.test(config.url)) {
                     config.headers.Authorization = 'JWT ' + AuthService.getToken();
                 }
-
-                // config.params = config.params || {};
-                // // to improve: necessary for ui.bootstrap ; and the token is useless for static files
-                // if (AuthService.isAuthenticated() && /^((http)|[^a-z])/.test(config.url)) {
-                //     config.params["bearer"] = AuthService.getToken();
-                // }
                 return config || $q.when(config);
             },
             response: function(response) {

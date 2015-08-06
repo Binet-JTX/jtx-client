@@ -37,7 +37,8 @@ angular.module('jtx.main', [
 
 .controller('main.ctrl.base', ['$scope', '$state',
     function($scope, $state) {
-        $scope.hello = 'Hello';
+        //The following is the french locale for moment.js date parsing module
+        //Available at http://momentjs.com/downloads/moment-with-locales.js
         moment.locale('fr', {
             months: "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
             monthsShort: "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
