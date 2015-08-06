@@ -37,12 +37,11 @@ angular.module('jtx.video', [
 })
 
 .controller('video.player.ctrl', ['$scope', function($scope) {
-    var controller = this
+    var controller = this;
     controller.API = null;
 
     controller.onPlayerReady = function(API) {
         controller.API = API;
-        console.log("Mythe");
     };
 
     controller.config = {
@@ -84,5 +83,5 @@ angular.module('jtx.video', [
         //     controller.API.play.bind(controller.API);
         // }
         // console.log(controller.config.tracks,controller.API.tracks);
-    }
+    };
 }]);

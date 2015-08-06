@@ -16,8 +16,8 @@ angular.module('jtx.auth', [
     }
 ])
 
-.controller('auth.login.ctrl', ['$scope', '$resource', 'auth.service',
-    function($scope, $resource, AuthService) {
+.controller('auth.login.ctrl', ['$scope', '$resource', 'auth.service','$state',
+    function($scope, $resource, AuthService,$state) {
         $scope.customLogin = function(credentials) {
             $scope.showErrors = false;
             AuthService.login(credentials).then(
@@ -25,15 +25,15 @@ angular.module('jtx.auth', [
                     $state.go('index.home');
                 },
                 function(errors) {
-                    if (errors[0] = "Unable to login with provided credentials.") {
-                        $scope.errors = "Le mot de passe ou l'e-mail donnés sont incorrects."
+                    if (errors[0] == "Unable to login with provided credentials.") {
+                        $scope.errors = "Le mot de passe ou l'e-mail donnés sont incorrects.";
                         $scope.credentials.password = "";
                     } else {
                         $scope.errors = errors;
                     }
                     $scope.showErrors = true;
                 });
-        }
+        };
 
     }
 ])
@@ -66,7 +66,7 @@ angular.module('jtx.auth', [
                 $localStorage.auth.user = null;
             },
             isAuthenticated: function() {
-                return $localStorage.auth.token != null;
+                return $localStorage.auth.token !== null;
             },
             getToken: function() {
                 return $localStorage.auth.token;
@@ -78,8 +78,8 @@ angular.module('jtx.auth', [
     }
 ])
 
-.factory('auth.interceptor', ['auth.service', '$q',
-    function(AuthService, $q) {
+.factory('auth.interceptor', ['auth.service', '$q','$injector',
+    function(AuthService, $q,$injector) {
         return {
             request: function(config) {
                 config.headers = config.headers || {};
@@ -97,14 +97,14 @@ angular.module('jtx.auth', [
             response: function(response) {
                 if (response.status === 401) {
                     AuthService.logout();
-                    $state.go('index.login');
+                    $injector.get('$state').go('index.login');
                 }
                 return response || $q.when(response);
             },
             responseError: function(response) {
                 if (response.status === 401) {
                     AuthService.logout();
-                    $state.go('index.login');
+                    $injector.get('$state').go('index.login');
                 }
                 return $q.reject(response);
             }

@@ -36,7 +36,7 @@ angular.module('jtx.main', [
 ])
 
 .controller('main.ctrl.base', ['$scope', '$state',
-    function($scope,$state) {
+    function($scope, $state) {
         $scope.hello = 'Hello';
         moment.locale('fr', {
             months: "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
@@ -107,7 +107,7 @@ angular.module('jtx.main', [
         $scope.logout = function() {
             AuthService.logout();
             $state.go('index.login');
-        }
+        };
     }
 ])
 
@@ -129,12 +129,12 @@ angular.module('jtx.main', [
             $scope.object.begin_date = moment($scope.object.begin_date);
             $scope.object.end_date = moment($scope.object.end_date);
 
-            if ($scope.kind == null)
+            if ($scope.kind === null)
                 $scope.kind = 'video';
             else if ($scope.kind == 'event')
                 $scope.object.date = $scope.object.begin_date;
         }]
-    }
+    };
 })
 
 .directive('jtxTagInput', function() {
@@ -149,7 +149,7 @@ angular.module('jtx.main', [
 
             $scope.loadTags = function() {
                 return Tag.query();
-            }
+            };
 
             $scope.addTag = function() {
                 if ($scope.tagToBeAdded && $scope.tagToBeAdded.key && $scope.tagToBeAdded.value) {
@@ -158,5 +158,5 @@ angular.module('jtx.main', [
                 }
             };
         }]
-    }
+    };
 });

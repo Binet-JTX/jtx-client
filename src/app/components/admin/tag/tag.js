@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('jtx.admin.tag', [
     //
 ])
@@ -25,7 +27,7 @@ angular.module('jtx.admin.tag', [
             id: 1,
             key: "Objet",
             value: "HCQ"
-        }]
+        }];
 
         $scope.showSuccess = false;
         $scope.showErrors = false;
@@ -37,7 +39,7 @@ angular.module('jtx.admin.tag', [
             }, function(errors) {
                 $scope.showErrors = true;
                 $scope.errors = errors;
-            });;
-        }
+            });
+        };
     }
 ]);

@@ -129,7 +129,7 @@ angular.module('jtx.admin.event', [
                         $scope.showErrors = true;
                         $scope.errors = errors;
                     }
-                )
+                );
             }
         };
     }

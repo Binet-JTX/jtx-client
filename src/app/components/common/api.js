@@ -9,9 +9,9 @@ angular.module('jtx.api', [
         return {
             route: function(path) {
                 if (/localhost/.test($location.absUrl())) {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
                 } else {
-                    return 'http://binet-jtx.com/api' + (path == '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
                 }
             }
         };
