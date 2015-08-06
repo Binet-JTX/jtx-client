@@ -35,7 +35,6 @@ angular.module('jtx.admin.event', [
                 title: event.title,
                 description: event.description
             };
-            console.log(event);
 
             //Merge the date and time fields into one datetime JSON string
             var beginHours = event.beginTime_f.split(":")[0];
@@ -69,7 +68,7 @@ angular.module('jtx.admin.event', [
             id: $stateParams.eventId
         }, function(event) {
             $scope.event = event;
-            console.log('event');
+            
             //Hydrates the date and time fields of the form with the data
             var beginDate_f = moment(event.begin_date);
             $scope.event.beginDate_f = beginDate_f.toDate();

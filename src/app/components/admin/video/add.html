@@ -29,11 +29,11 @@
                 <div class="panel-body">
                     <div class="form-group" tooltip="Inscris ici les métadonnées de la vidéo. Seul le titre est obligatoire, mais le mieux est de remplir le maximum de champs possibles.">
                         <label for="videoTitle">Titre</label>
-                        <input class="form-control" id="videoTitle" placeholder="Nom du fichier ou nom d'usage du clip" type="text">
+                        <input class="form-control" id="videoTitle" ng-model='video.title' placeholder="Nom du fichier ou nom d'usage du clip" type="text">
                     </div>
                     <div class="form-group" tooltip="Entre ici la date de première projection de la vidéo.">
                         <label for="videoDate">Date</label>
-                        <input class="form-control" id="videoDate" placeholder="2015-08-01" type="text">
+                        <input class="form-control" id="videoDate" ng-model='video.date_diffusion' placeholder="2015-08-01" type="text">
                     </div>
                     <div class="form-group" tooltip="Rajoute des vidéos associées à celle que tu es en train d'ajouter.">
                         <label for="videoRelated">Similaire(s)</label>
@@ -60,10 +60,14 @@
                     <jtx-tag-input ng-model="video.tags"></jtx-tag-input>
                     <div class="form-group" tooltip="Écris la description du clip en texte plein. N'hésite pas à ajouter des informations comme la source de la bande son, des anecdotes sur le tournage, etc.">
                         <label for="videoDescription">Description</label>
-                        <textarea class="form-control" name="description" rows="3" spellcheck="true"></textarea>
+                        <textarea class="form-control" name="description" ng-model='video.description' rows="3" spellcheck="true"></textarea>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="panel panel-primary" id="panelposter">
                 <div class="panel-heading" style="text-aligne:center">
                     <h3 class=panel-title>Choix du poster</h3>

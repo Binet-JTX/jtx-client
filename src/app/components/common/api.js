@@ -20,7 +20,7 @@ angular.module('jtx.api', [
 
 .factory('Event', ['API', '$resource',
         function(API, $resource) {
-            return $resource(API.route('events/:id'), {
+            return $resource(API.route('events/:id/'), {
                 id: '@id'
             }, {
                 update: {
@@ -34,20 +34,24 @@ angular.module('jtx.api', [
     ])
     .factory('Tag', ['API', '$resource',
         function(API, $resource) {
-            return $resource(API.route('tags/:id'), {
+            return $resource(API.route('tags/:id/'), {
                 id: '@id'
             }, {
                 update: {
                     method: 'PUT',
-                    url: API.route('tags/:id')
+                    url: API.route('tags/:id/')
                 },
+            },{
+                stripTrailingSlashes: false
             });
         }
     ])
     .factory('Video', ['API', '$resource',
         function(API, $resource) {
-            return $resource(API.route('video/:id'), {
+            return $resource(API.route('video/:id/'), {
                 id: '@id'
+            },{
+                stripTrailingSlashes: false
             });
         }
     ]);
