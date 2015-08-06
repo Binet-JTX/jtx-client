@@ -153,7 +153,7 @@ angular.module('jtx.main', [
             };
 
             $scope.addTag = function() {
-                if ($scope.tagToBeAdded && $scope.tagToBeAdded.key && $scope.tagToBeAdded.value) {
+                if ($scope.tagToBeAdded && $scope.tagToBeAdded._type && $scope.tagToBeAdded.value) {
                     $scope.tags.push($scope.tagToBeAdded);
                     $scope.tagToBeAdded = null;
                 }

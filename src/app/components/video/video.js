@@ -69,19 +69,6 @@ angular.module('jtx.video', [
     controller.savedSubtitles = controller.config.tracks[0];
 
     controller.toggleSubtitles = function() {
-        controller.API.changeSource();
-        // if (!controller.config.tracks) {
-        //     var currentTime = controller.API.currentTime
-        //     controller.API.stop();
-        //     controller.API.tracks = [$scope.savedSubtitles];
-        //     controller.API.seekTime(currentTime / 1000);
-        //     controller.API.play.bind(controller.API);
-        // } else {
-        //     var currentTime = controller.API.currentTime
-        //     delete controller.API.tracks;
-        //     controller.API.seekTime(currentTime / 1000);
-        //     controller.API.play.bind(controller.API);
-        // }
-        // console.log(controller.config.tracks,controller.API.tracks);
+        controller.API.changeSource([]);
     };
 }]);

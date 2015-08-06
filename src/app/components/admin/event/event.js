@@ -68,7 +68,7 @@ angular.module('jtx.admin.event', [
             id: $stateParams.eventId
         }, function(event) {
             $scope.event = event;
-            
+
             //Hydrates the date and time fields of the form with the data
             var beginDate_f = moment(event.begin_date);
             $scope.event.beginDate_f = beginDate_f.toDate();
@@ -112,7 +112,8 @@ angular.module('jtx.admin.event', [
                 $scope.success = "L'événement a été mis à jour avec succès !";
             }, function(errors) {
                 $scope.showErrors = true;
-                $scope.errors = errors;
+                $scope.errors = "une erreur est survenue lors de la modification de l'événement.";
+                console.log(errors);
             });
         };
 

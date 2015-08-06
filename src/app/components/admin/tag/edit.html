@@ -1,6 +1,6 @@
 <script id="tag-display-autocomplete.html" type="text/ng-template">
     <a>
-        <span ng-switch="match.model.key">
+        <span ng-switch="match.model._type">
             <span class="glyphicon glyphicon-user" ng-switch-when="Acteur" tooltip="Acteur"></span>
             <span ng-switch-when="Acteur">
                 Acteur :</span>
@@ -43,13 +43,13 @@
                 </button>
                 <span class="form-group">
                     <label class="sr-only" for="jtx-tag-input-add">Catégorie du tag :</label>
-                    <select class="form-control" ng-disabled="!selectedTag.key" ng-model="selectedTag.key" tooltip="Type de tag">
+                    <select class="form-control" ng-disabled="!selectedTag._type" ng-model="selectedTag._type" tooltip="Type de tag">
+                        <option value="JTX">JTX</option>
                         <option value="Acteur">Acteur</option>
                         <option value="Réalisateur">Réalisateur</option>
                         <option value="Objet">Objet</option>
                         <option value="Lieu">Lieu</option>
                         <option value="Catégorie">Catégorie</option>
-                        <option value="JTX">JTX</option>
                         <option value="Binet">Binet</option>
                         <option value="Autre">Autre</option>
                     </select>
