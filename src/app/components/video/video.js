@@ -14,14 +14,20 @@ angular.module('jtx.video', [
             .state('index.video', {
                 url: 'video',
                 templateUrl: 'app/components/video/video.html',
-                controller: 'video.ctrl'
+                controller: 'video.ctrl',
+                resolve: {
+                    req_video: ['Video', function(Video) {
+                        return Video.get({id: 1});
+                    }]
+                }
             });
     }
 ])
 
-.controller('video.ctrl', ['$scope',
-    function($scope) {
-        //
+.controller('video.ctrl', 
+    ['$scope', 'req_video', 
+    function($scope, req_video) {
+        $scope.video = req_video;
     }
 ])
 
@@ -36,39 +42,54 @@ angular.module('jtx.video', [
     };
 })
 
-.controller('video.player.ctrl', ['$scope', function($scope) {
-    var controller = this;
-    controller.API = null;
+.controller('video.player.ctrl', 
+    ['$scope', '$sce', 
+    function($scope, $sce) {
+        var controller = this;
+        controller.API = null;
 
-    controller.onPlayerReady = function(API) {
-        controller.API = API;
-    };
+        $scope.sources = function(vid) {
+            var video_sources = [];
+            _.forEach(vid.files, function(f) {
+                video_sources.push({src: $sce.trustAsResourceUrl(f.path), type: "video/" + f.extension});
+            });
+            return video_sources;
+        };
+        $scope.tracks = function(vid) {
+            return [{
+                src: $sce.trustAsResourceUrl(vid.subtitles.path),
+                kind: "subtitles",
+                srclang: "fr",
+                label: "Français",
+                default: false
+            }];
+        };
 
-    controller.config = {
-        sources: [{
-            src: "assets/videos/demons.mp4",
-            type: "video/mp4"
-        }, ],
-        tracks: [{
-            src: "assets/videos/demons.vtt",
-            kind: "subtitles",
-            srclang: "fr",
-            label: "Français",
-            default: true
-        }],
-        theme: "bower_components/videogular-themes-default/videogular.css",
-        plugins: {
-            //poster: "http://www.videogular.com/assets/images/videogular.png"
-            controls: {
-                "autohide": true,
-                "autohideTime": 3000
-            },
-        }
-    };
+        controller.onPlayerReady = function(API) {
+            controller.API = API;
+        };
 
-    controller.savedSubtitles = controller.config.tracks[0];
+        $scope.video.$promise.then(function(v) {
+            controller.config = {
+                sources: $scope.sources(v),
+                tracks: $scope.tracks(v),
+                theme: "bower_components/videogular-themes-default/videogular.css",
+                plugins: {
+                    poster: $scope.video.poster,
+                    controls: {
+                        "autohide": true,
+                        "autohideTime": 1500
+                    },
+                }
+            };
 
-    controller.toggleSubtitles = function() {
-        controller.API.changeSource([]);
-    };
-}]);
+            controller.toggleSubtitles = function() {
+                if (controller.config.tracks.length > 0) {
+                    controller.config.tracks = [];
+                } else {
+                    controller.config.tracks = $scope.tracks(v);
+                }
+            };
+        });
+    }]
+);

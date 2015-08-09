@@ -1,7 +1,7 @@
-<div class="videogular-contrainer" ng-controller='video.player.ctrl as controller'>
+<div class="videogular-contrainer" ng-controller="video.player.ctrl as controller">
     <videogular vg-player-ready="controller.onPlayerReady($API)" vg-theme="controller.config.theme">
         <vg-media vg-src="controller.config.sources" vg-tracks="controller.config.tracks"></vg-media>
-        <vg-controls vg-autohide-time='controller.config.plugins.controls.autohideTime' vg-autohide='controller.config.plugins.controls.autohide'>
+        <vg-controls vg-autohide-time="controller.config.plugins.controls.autohideTime" vg-autohide="controller.config.plugins.controls.autohide">
             <vg-play-pause-button></vg-play-pause-button>
             <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
             <vg-scrub-bar>
@@ -17,6 +17,7 @@
 
         <vg-overlay-play></vg-overlay-play>
         <vg-buffering></vg-buffering>
+        <vg-poster vg-url="controller.config.plugins.poster"></vg-poster>
     </videogular>
-<a ng-click='controller.toggleSubtitles()'>Sous-titres</a>
+<a ng-click="controller.toggleSubtitles()">Sous-titres</a>
 </div>
