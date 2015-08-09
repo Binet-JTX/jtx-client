@@ -56,6 +56,9 @@ angular.module('jtx.video', [
             return video_sources;
         };
         $scope.tracks = function(vid) {
+            if (vid.subtitles === null) {
+                return [];
+                
             return [{
                 src: $sce.trustAsResourceUrl(vid.subtitles.path),
                 kind: "subtitles",
