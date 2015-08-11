@@ -1,14 +1,32 @@
 <div id="navbar" role="navigation">
-    <div class="col-md-1">
-        <button class="btn btn-warning" ng-click='logout()'>Déconnexion</button>
-    </div>
-    <div class="col-md-1 " id="logocol">
+    <div class="col-sm-2 vcenter" id="logocol">
         <a ui-sref="index">
-            <img  alt="Logo" height="50" src="assets/images/logo.png"/>
-            <span id="brand">JTX</span>
+            <img alt="Logo" width="100%" src="assets/images/logoJTX.jpg"/>
         </a>
     </div>
-    <div class="col-md-4" id="searchcol">
+    <div class="col-md-5 vcenter" id="linkcol">
+        <span class="link">
+            <a ui-sref='index'>
+                Accueil
+            </a>
+        </span>
+        <span class="link">
+            <a ui-sref='index.video'>
+                Projections JTX
+            </a>
+        </span>
+        <span class="link">
+            <a ui-sref='index.search'>
+                Recherche
+            </a>
+        </span>
+        <span class="link" id="link-right">
+            <a ui-sref='index.admin'>
+                Administration
+            </a>
+        </span>
+    </div>
+    <div class="col-md-4 vcenter" id="searchcol">
         <form>
             <div class="input-group">
                 <input class="form-control" ng-model="search" placeholder="Rechercher..." type="text">
@@ -17,28 +35,5 @@
                 </span>
             </div>
         </form>
-    </div>
-    <div class="col-md-6" id="linkcol">
-        <span class="link">
-            <a ui-sref='index'>
-                <span class="glyphicon glyphicon-home"></span>&nbsp;Accueil
-            </a>
-        </span>
-        <span class="link">
-            <a ui-sref='index.video'>
-                <span class="glyphicon glyphicon-film"></span>&nbsp;Projections JTX
-            </a>
-        </span>
-        <span class="link">
-            <a ui-sref='index.search'>
-                <span class="glyphicon glyphicon-search"></span>&nbsp;Recherche
-            </a>
-        </span>
-        <span class="link" id="link-right">
-            <a ui-sref='index.admin'>
-                <span class="glyphicon glyphicon-cog"></span>&nbsp;Administration
-            </a>
-        </span>
-
     </div>
 </div>

@@ -29,24 +29,41 @@ body {
 
 /* Navbar part */
 
-div #navbar {}
+div .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
 div #logocol {
+    text-align:center;
     padding-top: 15px;
 }
+
 div #searchcol {
     text-align: center;
     padding-top: 15px;
 }
 div #linkcol {
-    text-align: right;
+    text-align: center;
     padding-top: 15px;
 }
 div #linkcol .link {
-    border-left: solid 1pt;
     padding: 10px;
 }
-div #linkcol #link-right {
-    border-right: solid 1pt;
+
+/* Home page */
+
+div #last-proj {
+    background-image: url(../../../assets/images/rond.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#last-proj-poster {
+    margin-top : 50px;
+    border : solid 5px;
 }
 
 /* Admin page */
