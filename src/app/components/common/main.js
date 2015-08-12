@@ -8,6 +8,7 @@ angular.module('jtx.main', [
     function($stateProvider) {
         $stateProvider
             .state('index', {
+                abstract:true,
                 url: '/',
                 views: {
                     '@': {
@@ -18,10 +19,6 @@ angular.module('jtx.main', [
                         templateUrl: 'app/components/common/navbar.html',
                         controller: 'main.ctrl.navbar'
                     },
-                    '@index': {
-                        templateUrl: 'app/components/common/home.html',
-                        controller: 'main.ctrl.home'
-                    }
                 }
             })
             .state('index.binet', {
@@ -31,6 +28,11 @@ angular.module('jtx.main', [
             .state('index.legal', {
                 url: 'legal',
                 templateUrl: 'app/components/static/legal.html'
+            })
+            .state('index.home', {
+                url:'home',
+                templateUrl: 'app/components/common/home.html',
+                controller: 'main.ctrl.home'
             });
     }
 ])

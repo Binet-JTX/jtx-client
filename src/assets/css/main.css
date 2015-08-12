@@ -29,40 +29,73 @@ body {
 
 /* Navbar part */
 
-div .vcenter {
+nav .vcenter {
     display: inline-block;
     vertical-align: middle;
     float: none;
 }
 
-div #logocol {
+nav #logocol {
     text-align:center;
+    padding-top: 15px;
+    max-width:200px;
+    z-index:1;
+}
+
+nav #searchcol {
+    text-align: center;
+    padding-top: 15px;
+}
+nav #linkcol {
     padding-top: 15px;
 }
 
-div #searchcol {
-    text-align: center;
-    padding-top: 15px;
+nav #linkcol div {
+    display: table;
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
 }
-div #linkcol {
-    text-align: center;
-    padding-top: 15px;
+
+nav #linkcol ul {
+    display: table-row;
 }
-div #linkcol .link {
-    padding: 10px;
+
+nav #linkcol .link {
+    text-align:center;
+    display: table-cell;
+    margin: 0;
+    padding:5px;
+    font-size: 1.3em;
+    font-family: "Gill Sans";
+    text-transform: uppercase;
+}
+
+nav #linkcol .link.active-page {
+    border-bottom: solid 1px;
+    border-color: #333;
+}
+
+nav #linkcol .link a,a:hover {
+    color:#333;
+    display:block;
+    text-decoration: none;
+    outline:0;
 }
 
 /* Home page */
 
 div #last-proj {
-    background-image: url(../../../assets/images/rond.jpg);
+    background-image: url(../../../assets/images/rond.png);
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    margin:10px
 }
 
 #last-proj-poster {
-    margin-top : 50px;
+    margin-top : 17.5%;
+    margin-bottom : 17.5%;
     border : solid 5px;
 }
 
@@ -73,4 +106,22 @@ div #last-proj {
 }
 #adminPanel div .panel-heading {
     font-weight: bold;
+    font-family: "Gill Sans"
+}
+
+/* Font */
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url('../fonts/Gill_Sans_Light.ttf');
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    font-weight: bold;
+    src: url('../fonts/Gill_Sans_Bold.ttf');
+}
+
+.gill {
+    font-family: "Gill Sans"
 }

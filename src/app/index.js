@@ -20,7 +20,7 @@ angular.module('jtx', [
 
 .config(['$urlRouterProvider',
     function($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
     }
 ])
 

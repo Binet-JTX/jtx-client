@@ -1,32 +1,36 @@
-<div id="navbar" role="navigation">
+<nav id="navbar" role="navigation">
     <div class="col-sm-2 vcenter" id="logocol">
         <a ui-sref="index">
-            <img alt="Logo" width="100%" src="assets/images/logoJTX.jpg"/>
+            <img  alt="Logo" src="assets/images/logoJTX.png" width="100%"/>
         </a>
-    </div>
-    <div class="col-md-5 vcenter" id="linkcol">
-        <span class="link">
-            <a ui-sref='index'>
-                Accueil
-            </a>
-        </span>
-        <span class="link">
-            <a ui-sref='index.video'>
-                Projections JTX
-            </a>
-        </span>
-        <span class="link">
-            <a ui-sref='index.search'>
-                Recherche
-            </a>
-        </span>
-        <span class="link" id="link-right">
-            <a ui-sref='index.admin'>
-                Administration
-            </a>
-        </span>
-    </div>
-    <div class="col-md-4 vcenter" id="searchcol">
+    </div><!--
+    --><div class="col-sm-7 vcenter" id="linkcol">
+        <div>
+            <ul>
+                <li class="link" ui-sref-active="active-page">
+                    <a ui-sref='index.home'>
+                        Accueil
+                    </a>
+                </li>
+                <li class="link" ui-sref-active="active-page">
+                    <a ui-sref='index.video'>
+                        Projections&nbsp;JTX
+                    </a>
+                </li>
+                <li class="link" ui-sref-active="active-page">
+                    <a ui-sref='index.search'>
+                        Recherche
+                    </a>
+                </li>
+                <li class="link" ui-sref-active="active-page">
+                    <a ui-sref='index.admin'>
+                        Administration
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><!--
+    --><div class="col-sm-3 vcenter" id="searchcol">
         <form>
             <div class="input-group">
                 <input class="form-control" ng-model="search" placeholder="Rechercher..." type="text">
@@ -36,4 +40,4 @@
             </div>
         </form>
     </div>
-</div>
+</nav>
