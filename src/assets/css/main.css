@@ -1,3 +1,14 @@
+/* ------------------------------
+            Common
+-----------------------------------
+
+/* Changes the mouse to a hand when hovering ng-click elements */
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -71,12 +82,13 @@ nav #linkcol .link {
     text-transform: uppercase;
 }
 
-nav #linkcol .link.active-page {
+nav #linkcol .link.active-page a span {
     border-bottom: solid 1px;
     border-color: #333;
+    padding-bottom: 5px;
 }
 
-nav #linkcol .link a,a:hover {
+nav #linkcol .link a, nav #linkcol .link a:hover {
     color:#333;
     display:block;
     text-decoration: none;
@@ -85,19 +97,6 @@ nav #linkcol .link a,a:hover {
 
 /* Home page */
 
-div #last-proj {
-    background-image: url(../../../assets/images/rond.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin:10px
-}
-
-#last-proj-poster {
-    margin-top : 17.5%;
-    margin-bottom : 17.5%;
-    border : solid 5px;
-}
 
 /* Admin page */
 
@@ -107,6 +106,20 @@ div #last-proj {
 #adminPanel div .panel-heading {
     font-weight: bold;
     font-family: "Gill Sans"
+}
+
+/* Video page */
+
+span#date_diffusion {
+    float:left;
+}
+span#views {
+    float:right
+}
+
+div#clear {
+    clear: both;
+    margin-bottom: 10px
 }
 
 /* Font */

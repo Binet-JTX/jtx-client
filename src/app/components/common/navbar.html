@@ -1,43 +1,45 @@
-<nav id="navbar" role="navigation">
-    <div class="col-sm-2 vcenter" id="logocol">
-        <a ui-sref="index">
-            <img  alt="Logo" src="assets/images/logoJTX.png" width="100%"/>
-        </a>
-    </div><!--
-    --><div class="col-sm-7 vcenter" id="linkcol">
-        <div>
-            <ul>
-                <li class="link" ui-sref-active="active-page">
-                    <a ui-sref='index.home'>
-                        Accueil
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active-page">
-                    <a ui-sref='index.video'>
-                        Projections&nbsp;JTX
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active-page">
-                    <a ui-sref='index.search'>
-                        Recherche
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active-page">
-                    <a ui-sref='index.admin'>
-                        Administration
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div><!--
-    --><div class="col-sm-3 vcenter" id="searchcol">
-        <form>
-            <div class="input-group">
-                <input class="form-control" ng-model="search" placeholder="Rechercher..." type="text">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span  class="glyphicon glyphicon-search"/></button>
-                </span>
+<div class="container-fluid">
+    <nav class="row" id="navbar" role="navigation">
+        <div class="col-sm-2 vcenter" id="logocol">
+            <a ui-sref="index">
+                <img  alt="Logo" src="assets/images/logoJTX.png" width="100%"/>
+            </a>
+        </div><!--
+        --><div class="col-sm-7 vcenter" id="linkcol">
+            <div>
+                <ul>
+                    <li class="link" ui-sref-active="active-page">
+                        <a ui-sref='index.home'>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li class="link" ui-sref-active="active-page">
+                        <a ui-sref='index.video'>
+                            <span>Projections&nbsp;JTX</span>
+                        </a>
+                    </li>
+                    <li class="link" ui-sref-active="active-page">
+                        <a ui-sref='index.search'>
+                            <span>Recherche</span>
+                        </a>
+                    </li>
+                    <li class="link" ui-sref-active="active-page">
+                        <a ui-sref='index.admin'>
+                            <span>Administration</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </form>
-    </div>
-</nav>
+        </div><!--
+        --><div class="col-sm-3 vcenter" id="searchcol">
+            <form>
+                <div class="input-group">
+                    <input class="form-control" ng-model="search" placeholder="Rechercher..." type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span  class="glyphicon glyphicon-search"/></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </nav>
+</div>

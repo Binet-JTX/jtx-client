@@ -8,7 +8,7 @@ angular.module('jtx.main', [
     function($stateProvider) {
         $stateProvider
             .state('index', {
-                abstract:true,
+                abstract: true,
                 url: '/',
                 views: {
                     '@': {
@@ -30,15 +30,15 @@ angular.module('jtx.main', [
                 templateUrl: 'app/components/static/legal.html'
             })
             .state('index.home', {
-                url:'home',
+                url: 'home',
                 templateUrl: 'app/components/common/home.html',
                 controller: 'main.ctrl.home'
             });
     }
 ])
 
-.controller('main.ctrl.base', ['$scope', '$state',
-    function($scope, $state) {
+.controller('main.ctrl.base', ['$scope', '$state', 'auth.service',
+    function($scope, $state, AuthService) {
         //The following is the french locale for moment.js date parsing module
         //Available at http://momentjs.com/downloads/moment-with-locales.js
         moment.locale('fr', {
@@ -101,22 +101,27 @@ angular.module('jtx.main', [
         });
         moment.locale('fr');
 
-
-    }
-])
-
-.controller('main.ctrl.navbar', ['$scope', 'auth.service', '$state',
-    function($scope, AuthService, $state) {
         $scope.logout = function() {
             AuthService.logout();
+            console.log("Salut! ");
             $state.go('index.login');
         };
+
     }
 ])
 
-.controller('main.ctrl.home', ['$scope',
-    function($scope) {
-        //
+.controller('main.ctrl.navbar', ['$scope',
+    function($scope) {}
+])
+
+.controller('main.ctrl.home', ['$scope', 'Projection',
+    function($scope, Projection) {
+        Projection.query().$promise.then(
+            function(projections) {
+                $scope.lastProj = projections[0];
+                $scope.lastProj.date = moment($scope.lastProj.date)
+            }
+        );
     }
 ])
 

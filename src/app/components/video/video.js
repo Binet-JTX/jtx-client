@@ -24,10 +24,11 @@ angular.module('jtx.video', [
     }
 ])
 
-.controller('video.ctrl', 
-    ['$scope', 'req_video', 
+.controller('video.ctrl',
+    ['$scope', 'req_video',
     function($scope, req_video) {
         $scope.video = req_video;
+        $scope.video.date_diffusion = moment($scope.video.date_diffusion);
     }
 ])
 
@@ -42,8 +43,8 @@ angular.module('jtx.video', [
     };
 })
 
-.controller('video.player.ctrl', 
-    ['$scope', '$sce', 
+.controller('video.player.ctrl',
+    ['$scope', '$sce',
     function($scope, $sce) {
         var controller = this;
         controller.API = null;
