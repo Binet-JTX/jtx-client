@@ -9,7 +9,7 @@ angular.module('jtx.api', [
         return {
             route: function(path) {
                 if (/localhost/.test($location.absUrl())) {
-                    return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
+                    return 'http://127.0.0.1:8000' + (path === '' ? '' : '/' + path);
                 } else {
                     return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
                 }
