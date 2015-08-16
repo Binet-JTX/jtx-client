@@ -120,6 +120,26 @@ angular.module('jtx.main', [
             function(projections) {
                 $scope.lastProj = projections[0];
                 $scope.lastProj.date = moment($scope.lastProj.date)
+                var recentProjs = projections;
+                //the next commmand removers first element of array
+                recentProjs.shift();
+
+
+                $scope.recentProjs = [];
+                //split the recentProjs arrays into chunks for display
+                var chunk_size = 2;
+                for (var i = 0; i < recentProjs.length; i += chunk_size) {
+                    if (i + chunk_size < recentProjs.length) {
+                        var j = i + chunk_size;
+                    } else {
+                        var j = recentProjs.length;
+                    }
+                    var chunk = recentProjs.slice(i, j);
+                    for (var proj in chunk) {
+                        chunk[proj].date = moment(chunk[proj].date);
+                    }
+                    $scope.recentProjs.push(chunk);
+                }
             }
         );
     }

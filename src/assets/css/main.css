@@ -97,6 +97,21 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
 
 /* Home page */
 
+#last-proj-poster-container {
+    background-image: url(../images/rond.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+#last-proj-poster, .proj-poster {
+    border : solid 5px;
+}
+
+.recent-projs-row {
+    margin-bottom:15px
+}
 
 /* Admin page */
 
