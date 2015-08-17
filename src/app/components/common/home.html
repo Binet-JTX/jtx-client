@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 col-lg-4">
             <h1 class="gill">Dernière proj'</h1>
             <div class="row" id="last-proj-poster-container">
                 <div class="col-xs-8 col-xs-offset-2">
@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-xs-8 col-xs-offset-2">
                     <div id="last-proj-title">
                         <span class="gill">{{lastProj.title}}</span>
                     </div>
@@ -20,10 +20,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 col-lg-8">
             <h1 class="gill">Récemment sur vos écrans</h1>
-            <div class="row recent-projs-row" ng-repeat="projs in recentProjs">
-                <div class="col-md-4 proj-thumb-col" ng-repeat="proj in projs">
+                <div class="col-md-4 col-lg-3 col-sm-6 proj-thumb-col" ng-repeat="proj in recentProjs">
                     <div class="proj-thumb-container">
                         <div class="proj-thumb-poster-container">
                             <img alt="{{proj.title}}" src="{{proj.poster}}">
