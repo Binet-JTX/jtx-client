@@ -19,14 +19,30 @@ angular.module('jtx.admin.projection', [
                 url: '/edit/{projectionId:[0-9]+}',
                 templateUrl: 'app/components/admin/projection/edit.html',
                 controller: 'admin.projection.edit.ctrl',
-            }
-        );
+            });
     }
 ])
 
 .controller('admin.projection.add.ctrl', ['$scope', '$resource', 'Projection',
     function($scope, $resource, Projection) {
+        $scope.now = moment();
 
+        $scope.addProjection = function(projection) {
+            var sentProjection = {
+                title: projection.title,
+                description: projection.description,
+                date:moment(projection.date_f).format('YYYY-MM-DD'),
+                poster:null
+            };
+
+            Projection.save(sentProjection).$promise.then(function(result) {
+                $scope.showSuccess = true;
+                $scope.success = "L'événement " + projection.title + " a été ajouté avec succès !";
+            }, function(errors) {
+                $scope.showErrors = true;
+                $scope.errors = errors;
+            });
+        };
     }
 ])
 
@@ -43,7 +59,7 @@ angular.module('jtx.admin.projection', [
             $scope.projection.updated_at = moment(projection.updated_at);
         });
 
-        $scope.now = new Date();
+        $scope.now = moment();
         $scope.showSuccess = false;
         $scope.showErrors = false;
 
@@ -52,7 +68,7 @@ angular.module('jtx.admin.projection', [
                 title: projection.title,
                 description: projection.description,
                 id: projection.id,
-                date:moment(projection.date_f).format('YYYY-MM-DD')
+                date: moment(projection.date_f).format('YYYY-MM-DD')
             };
 
             console.log(sentProjection);
