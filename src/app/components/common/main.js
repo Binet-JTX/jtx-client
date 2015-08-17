@@ -103,7 +103,6 @@ angular.module('jtx.main', [
 
         $scope.logout = function() {
             AuthService.logout();
-            console.log("Salut! ");
             $state.go('index.login');
         };
 
@@ -119,7 +118,7 @@ angular.module('jtx.main', [
         Projection.query().$promise.then(
             function(projections) {
                 for (var proj in projections) {
-                    projections[proj].date = moment(projections[proj].date)
+                    projections[proj].date = moment(projections[proj].date);
                 }
 
                 $scope.lastProj = projections[0];

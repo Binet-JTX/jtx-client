@@ -1,7 +1,8 @@
 angular.module('jtx.admin', [
     'jtx.admin.event',
     'jtx.admin.tag',
-    'jtx.admin.video'
+    'jtx.admin.video',
+    'jtx.admin.projection'
 ])
 
 .config(['$stateProvider',

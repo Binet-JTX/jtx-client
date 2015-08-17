@@ -54,49 +54,41 @@ angular.module('jtx.admin.tag', [
                         value: 1,
                         display_name: "JTX"
                     };
-                    break;
                 case "Acteur":
                     return {
                         value: 2,
                         display_name: "Acteur"
                     };
-                    break;
                 case "Réalisateur":
                     return {
                         value: 3,
                         display_name: "Réalisateur"
                     };
-                    break;
                 case "Binet":
                     return {
                         value: 4,
                         display_name: "Binet"
                     };
-                    break;
                 case "Catégorie":
                     return {
                         value: 5,
                         display_name: "Catégorie"
                     };
-                    break;
                 case "Lieu":
                     return {
                         value: 6,
                         display_name: "Lieu"
                     };
-                    break;
                 case "Objet":
                     return {
                         value: 7,
                         display_name: "Objet"
                     };
-                    break;
                 case "Autre":
                     return {
                         value: 8,
                         display_name: "Autre"
                     };
-                    break;
             }
         }
     }

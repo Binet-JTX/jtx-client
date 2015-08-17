@@ -4,7 +4,7 @@
 
 /* Changes the mouse to a hand when hovering ng-click elements */
 
-[ng-click], [data-ng-click], [x-ng-click] {
+[ui-sref], [ng-click], [data-ng-click], [x-ng-click] {
     cursor: pointer;
 }
 
@@ -94,8 +94,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding-right:15px;
-    padding-left:15px;
+    margin-left:15px;
 }
 #last-proj-poster {
     margin-top: 20%;

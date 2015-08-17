@@ -27,7 +27,7 @@
                         <div class="proj-thumb-poster-container">
                             <img alt="{{proj.title}}" src="{{proj.poster}}">
                         </div>
-                        <div class="text-center proj-thumb-data-container">
+                        <div ui-sref="index.admin.projection.edit({projectionId : {{proj.id}}})" class="text-center proj-thumb-data-container">
                             <div class="proj-thumb-title">{{proj.title}}</div>
                             <div class="proj-thumb-date">Projeté {{proj.date.fromNow()}}</div>
                         </div>
