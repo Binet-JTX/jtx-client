@@ -4,34 +4,33 @@
             <h1 class="gill">Dernière proj'</h1>
             <div class="row" id="last-proj-poster-container">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <img id="last-proj-poster" src="assets/images/action.png" width="100%">
+                    <img id="last-proj-poster" src="{{lastProj.poster}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center">
+                    <div id="last-proj-title">
                         <span class="gill">{{lastProj.title}}</span>
-                    </h2>
-                    <p>
-                        <span class="text-muted" id="last-proj-date">{{lastProj.date.format('DD/MM/YYYY')}}</span>
+                    </div>
+                    <div id="last-proj-description">
+                        <span class="text-muted" id="last-proj-date">Projeté {{lastProj.date.fromNow()}}</span>
                         –
-                        {{lastProj.description}}</p>
+                        {{lastProj.description}}
+                    </div>
                 </div>
             </div>
         </div>
-
         <div class="col-md-7">
             <h1 class="gill">Récemment sur vos écrans</h1>
             <div class="row recent-projs-row" ng-repeat="projs in recentProjs">
-                <div class="col-md-6" ng-repeat="proj in projs">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="proj-poster" src="{{proj.poster}}" height='100%' width='100%'>
+                <div class="col-md-4 proj-thumb-col" ng-repeat="proj in projs">
+                    <div class="proj-thumb-container">
+                        <div class="proj-thumb-poster-container">
+                            <img alt="{{proj.title}}" src="{{proj.poster}}">
                         </div>
-                        <div class="col-sm-6">
-                            <h3 class="gill">{{proj.title}}</h3>
-                            <p class="text-muted">{{proj.date.format('DD/MM/YYYY')}}</p>
-                            <p>{{proj.description}}</p>
+                        <div class="text-center proj-thumb-data-container">
+                            <div class="proj-thumb-title">{{proj.title}}</div>
+                            <div class="proj-thumb-date">Projeté {{proj.date.fromNow()}}</div>
                         </div>
                     </div>
                 </div>

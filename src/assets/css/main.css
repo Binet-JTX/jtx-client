@@ -3,9 +3,8 @@
 -----------------------------------
 
 /* Changes the mouse to a hand when hovering ng-click elements */
-[ng-click],
-[data-ng-click],
-[x-ng-click] {
+
+[ng-click], [data-ng-click], [x-ng-click] {
     cursor: pointer;
 }
 
@@ -45,14 +44,12 @@ nav .vcenter {
     vertical-align: middle;
     float: none;
 }
-
 nav #logocol {
-    text-align:center;
+    text-align: center;
     padding-top: 15px;
-    max-width:200px;
-    z-index:1;
+    max-width: 200px;
+    z-index: 1;
 }
-
 nav #searchcol {
     text-align: center;
     padding-top: 15px;
@@ -60,39 +57,34 @@ nav #searchcol {
 nav #linkcol {
     padding-top: 15px;
 }
-
 nav #linkcol div {
     display: table;
     border-collapse: collapse;
     border: none;
     width: 100%;
 }
-
 nav #linkcol ul {
     display: table-row;
 }
-
 nav #linkcol .link {
-    text-align:center;
+    text-align: center;
     display: table-cell;
     margin: 0;
-    padding:5px;
+    padding: 5px;
     font-size: 1.3em;
     font-family: "Gill Sans";
     text-transform: uppercase;
 }
-
 nav #linkcol .link.active-page a span {
     border-bottom: solid 1px;
     border-color: #333;
     padding-bottom: 5px;
 }
-
 nav #linkcol .link a, nav #linkcol .link a:hover {
-    color:#333;
-    display:block;
+    color: #333;
+    display: block;
     text-decoration: none;
-    outline:0;
+    outline: 0;
 }
 
 /* Home page */
@@ -102,16 +94,62 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    padding-right:15px;
 }
-
-
-#last-proj-poster, .proj-poster {
-    border : solid 5px;
+#last-proj-poster {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    border: solid 5px;
+    width:100%;
+    height: auto;
 }
-
+#last-proj-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: "Gill Sans";
+    font-weight: bold;
+}
 .recent-projs-row {
-    margin-bottom:15px
+    margin-bottom: 15px
 }
+.proj-thumb-col {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.proj-thumb-container {
+    position: relative;
+}
+.proj-thumb-container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.proj-thumb-poster-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right:0;
+}
+.proj-thumb-poster-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.proj-thumb-data-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right:0;
+    background-color: rgb(57, 57, 57);
+    color: rgb(227, 227, 227);
+}
+.proj-thumb-title {
+    font-size: 1.5em;
+    font-family: "Gill Sans";
+    font-weight: bold;
+}
+.proj-thumb-date {}
 
 /* Admin page */
 
@@ -126,12 +164,11 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
 /* Video page */
 
 span#date_diffusion {
-    float:left;
+    float: left;
 }
 span#views {
-    float:right
+    float: right
 }
-
 div#clear {
     clear: both;
     margin-bottom: 10px
@@ -143,13 +180,11 @@ div#clear {
     font-family: "Gill Sans";
     src: url('../fonts/Gill_Sans_Light.ttf');
 }
-
 @font-face {
     font-family: "Gill Sans";
     font-weight: bold;
     src: url('../fonts/Gill_Sans_Bold.ttf');
 }
-
 .gill {
     font-family: "Gill Sans"
 }

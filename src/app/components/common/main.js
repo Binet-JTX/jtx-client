@@ -127,7 +127,7 @@ angular.module('jtx.main', [
 
                 $scope.recentProjs = [];
                 //split the recentProjs arrays into chunks for display
-                var chunk_size = 2;
+                var chunk_size = 3;
                 for (var i = 0; i < recentProjs.length; i += chunk_size) {
                     if (i + chunk_size < recentProjs.length) {
                         var j = i + chunk_size;
