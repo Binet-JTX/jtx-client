@@ -22,17 +22,8 @@
         </div>
         <div class="col-md-7 col-lg-8">
             <h1 class="gill">Récemment sur vos écrans</h1>
-                <div class="col-md-4 col-lg-3 col-sm-6 proj-thumb-col" ng-repeat="proj in recentProjs">
-                    <div class="proj-thumb-container">
-                        <div class="proj-thumb-poster-container">
-                            <img alt="{{proj.title}}" src="{{proj.poster}}">
-                        </div>
-                        <div ui-sref="index.admin.projection.edit({projectionId : {{proj.id}}})" class="text-center proj-thumb-data-container">
-                            <div class="proj-thumb-title">{{proj.title}}</div>
-                            <div class="proj-thumb-date">Projeté {{proj.date.fromNow()}}</div>
-                        </div>
-                    </div>
-                </div>
+                <jtx-thumbnail ng-model="proj" ng-repeat="proj in recentProjs">
+                </jtx-thumbnail>
             </div>
         </div>
     </div>

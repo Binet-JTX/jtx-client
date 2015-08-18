@@ -133,7 +133,7 @@ angular.module('jtx.main', [
 .directive('jtxSearchable', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/searchable-directive.html',
+        templateUrl: 'app/components/common/directive-template/searchable-directive.html',
         scope: {
             kind: '=kind', // video | projection | event
             object: '='
@@ -153,7 +153,7 @@ angular.module('jtx.main', [
 .directive('jtxTagInput', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/tag-input/tag-input-directive.html',
+        templateUrl: 'app/components/common/tag-input/directive-template/tag-input-directive.html',
         scope: {
             tags: '=ngModel'
         },
@@ -170,6 +170,19 @@ angular.module('jtx.main', [
                     $scope.tagToBeAdded = null;
                 }
             };
+        }]
+    };
+})
+
+.directive('jtxThumbnail', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'app/components/common/directive-template/thumbnail-directive.html',
+        scope: {
+            object:'=ngModel'
+        },
+        controller: ['$scope', function($scope) {
+
         }]
     };
 });

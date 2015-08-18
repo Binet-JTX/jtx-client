@@ -91,5 +91,5 @@ angular.module('jtx.admin.tag', [
                     };
             }
         }
-    }
+    };
 });
