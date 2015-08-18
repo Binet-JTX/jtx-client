@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-sm-offset-2">
+            <h1 id="projection-title">{{proj.title}}</h1>
+            <p class="text-muted">Projeté le
+                {{proj.date.format('DD/MM/YYYY')}}</p>
+            <p>{{proj.description}}</p>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+            <img class="img-responsive" src="{{proj.poster}}">
+        </div>
+    </div>
+    <hr>
+    <div class="row margin-row" ng-repeat="video in videos">
+        <div class="col-md-3 col-sm-4">
+            <img class="img-responsive" alt="{{video.title}}" src="{{video.poster}}">
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <h3 class="projection-video-title">{{video.title}}</h3>
+            <p>{{video.description}}</p>
+        </div>
+    </div>
+</div>

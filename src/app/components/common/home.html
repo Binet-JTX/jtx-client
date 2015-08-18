@@ -13,7 +13,8 @@
                         <span class="gill">{{lastProj.title}}</span>
                     </div>
                     <div id="last-proj-description">
-                        <span class="text-muted" id="last-proj-date">Projeté {{lastProj.date.fromNow()}}</span>
+                        <span class="text-muted" id="last-proj-date">Projeté
+                            {{lastProj.date.fromNow()}}</span>
                         –
                         {{lastProj.description}}
                     </div>
@@ -22,9 +23,10 @@
         </div>
         <div class="col-md-7 col-lg-8">
             <h1 class="gill">Récemment sur vos écrans</h1>
-                <jtx-thumbnail ng-model="proj" ng-repeat="proj in recentProjs">
-                </jtx-thumbnail>
+            <div class="row">
+                <jtx-thumbnail ng-model="proj" ng-repeat="proj in recentProjs"></jtx-thumbnail>
             </div>
         </div>
     </div>
+</div>
 </div>

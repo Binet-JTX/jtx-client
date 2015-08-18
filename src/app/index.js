@@ -15,7 +15,8 @@ angular.module('jtx', [
     'jtx.search',
     'jtx.api',
     'jtx.admin',
-    'jtx.auth'
+    'jtx.auth',
+    'jtx.projection'
 ])
 
 .config(['$urlRouterProvider',

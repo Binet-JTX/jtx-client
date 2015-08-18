@@ -37,6 +37,21 @@ body {
     margin: 20px 0;
 }
 
+/* Font */
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url('../fonts/Gill_Sans_Light.ttf');
+}
+@font-face {
+    font-family: "Gill Sans";
+    font-weight: bold;
+    src: url('../fonts/Gill_Sans_Bold.ttf');
+}
+.gill {
+    font-family: "Gill Sans"
+}
+
 /* Navbar part */
 
 nav .vcenter {
@@ -95,6 +110,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     background-repeat: no-repeat;
     background-size: contain;
     margin-left:15px;
+    margin-right: 15px;
 }
 #last-proj-poster {
     margin-top: 20%;
@@ -109,7 +125,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     font-family: "Gill Sans";
     font-weight: bold;
 }
-.recent-projs-row {
+.margin-row {
     margin-bottom: 15px
 }
 .proj-thumb-col {
@@ -162,6 +178,22 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     font-family: "Gill Sans"
 }
 
+/* Projection page */
+
+.projection-video-poster {
+    height:auto;
+    width:100px;
+}
+
+#projection-title {
+    font-family: "Gill Sans";
+    font-weight: bold;
+}
+
+.projection-video-title {
+    font-family: "Gill Sans"
+}
+
 /* Video page */
 
 span#date_diffusion {
@@ -173,19 +205,4 @@ span#views {
 div#clear {
     clear: both;
     margin-bottom: 10px
-}
-
-/* Font */
-
-@font-face {
-    font-family: "Gill Sans";
-    src: url('../fonts/Gill_Sans_Light.ttf');
-}
-@font-face {
-    font-family: "Gill Sans";
-    font-weight: bold;
-    src: url('../fonts/Gill_Sans_Bold.ttf');
-}
-.gill {
-    font-family: "Gill Sans"
 }
