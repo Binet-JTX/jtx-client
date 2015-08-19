@@ -19,7 +19,7 @@ angular.module('jtx.projection', [
     function($scope, $resource, Projection, Video) {
         Projection.query().$promise.then(
             function(projections) {
-                $scope.proj = projections[2];
+                $scope.proj = projections[0];
                 $scope.proj.date = moment($scope.proj.date);
             }
         );

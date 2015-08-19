@@ -109,14 +109,14 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-left:15px;
+    margin-left: 15px;
     margin-right: 15px;
 }
 #last-proj-poster {
     margin-top: 20%;
     margin-bottom: 20%;
     border: solid 5px;
-    width:100%;
+    width: 100%;
     height: auto;
 }
 #last-proj-title {
@@ -131,7 +131,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
 .proj-thumb-col {
     padding-right: 5px;
     padding-left: 5px;
-    padding-top:10px;
+    padding-top: 10px;
 }
 .proj-thumb-container {
     position: relative;
@@ -146,7 +146,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     top: 0;
     left: 0;
     bottom: 0;
-    right:0;
+    right: 0;
 }
 .proj-thumb-poster-container img {
     width: 100%;
@@ -157,7 +157,7 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
     position: absolute;
     left: 0;
     bottom: 0;
-    right:0;
+    right: 0;
     background-color: rgb(57, 57, 57);
     color: rgb(227, 227, 227);
 }
@@ -180,18 +180,43 @@ nav #linkcol .link a, nav #linkcol .link a:hover {
 
 /* Projection page */
 
-.projection-video-poster {
-    height:auto;
-    width:100px;
+@media(min-width:768px) {
+    .projection-col {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+    }
+    #projection-video-list {
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
-
+.projection-video-poster {
+    height: auto;
+    width: 100px;
+}
+#projection-video-list {
+    overflow: auto;
+    max-height: 400px;
+}
 #projection-title {
     font-family: "Gill Sans";
     font-weight: bold;
 }
-
 .projection-video-title {
     font-family: "Gill Sans"
+}
+#projection-video-list-container {
+    max-height: 100%;
+}
+#projection-poster {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 /* Video page */

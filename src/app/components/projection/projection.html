@@ -1,19 +1,76 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5 col-sm-offset-2">
+        <div class="col-sm-6 projection-col">
+            <jtx-video-player></jtx-video-player>
             <h1 id="projection-title">{{proj.title}}</h1>
             <p class="text-muted">Projeté le
                 {{proj.date.format('DD/MM/YYYY')}}</p>
             <p>{{proj.description}}</p>
         </div>
-        <div class="col-sm-3 col-sm-offset-1">
-            <img class="img-responsive" src="{{proj.poster}}">
+        <div class="col-sm-3 projection-col" id="projection-video-list-container">
+            <div id="projection-video-list">
+                <ol>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                    <li ng-repeat="video in videos">
+                        {{video.title}}
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-3 projection-col">
+            <img "{{proj.title}}" id="projection-poster" src="{{proj.poster}}">
         </div>
     </div>
-    <hr>
-    <div class="row margin-row" ng-repeat="video in videos">
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-6 margin-row" ng-repeat="video in videos">
         <div class="col-md-3 col-sm-4">
-            <img class="img-responsive" alt="{{video.title}}" src="{{video.poster}}">
+            <img alt="{{video.title}}" class="img-responsive" src="{{video.poster}}">
         </div>
         <div class="col-md-9 col-sm-8">
             <h3 class="projection-video-title">{{video.title}}</h3>
