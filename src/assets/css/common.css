@@ -1,0 +1,48 @@
+/* Changes the mouse to a hand when hovering clickable elements */
+
+[ui-sref], [ng-click], [data-ng-click], [x-ng-click] {
+    cursor: pointer;
+}
+
+/* Sticky footer styles */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+footer > .container {
+    text-align: center;
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+footer > .container > .text-muted {
+    margin: 20px 0;
+}
+
+/* Gill Sans font */
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url('../fonts/Gill_Sans_Light.ttf');
+}
+@font-face {
+    font-family: "Gill Sans";
+    font-weight: bold;
+    src: url('../fonts/Gill_Sans_Bold.ttf');
+}
+.gill {
+    font-family: "Gill Sans"
+}

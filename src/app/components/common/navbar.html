@@ -1,42 +1,42 @@
 <div class="container-fluid">
-    <nav class="row" id="navbar" role="navigation">
-        <div class="col-sm-2 vcenter" id="logocol">
+    <nav class="row" role="navigation">
+        <div class="col-md-2" id="logo-col">
             <a ui-sref="index.home">
-                <img  alt="Logo" src="assets/images/logoJTX.png" width="100%"/>
+                <img alt="Logo" src="assets/images/logoJTX.png" width="200px"/>
             </a>
-        </div><!--
-        --><div class="col-sm-7 vcenter" id="linkcol">
+        </div>
+        <div class="col-md-6" id="links-col">
             <div>
                 <ul>
-                    <li class="link" ui-sref-active="active-page">
+                    <li ui-sref-active="active-page">
                         <a ui-sref='index.home'>
                             <span>Accueil</span>
                         </a>
                     </li>
-                    <li class="link" ui-sref-active="active-page">
+                    <li ui-sref-active="active-page">
                         <a ui-sref='index.video'>
                             <span>Lecteur&nbsp;vidéo</span>
                         </a>
                     </li>
-                    <li class="link" ui-sref-active="active-page">
+                    <li ui-sref-active="active-page">
                         <a ui-sref='index.projection'>
                             <span>Projections&nbsp;JTX</span>
                         </a>
                     </li>
-                    <li class="link" ui-sref-active="active-page">
+                    <li ui-sref-active="active-page">
                         <a ui-sref='index.admin'>
                             <span>Administration</span>
                         </a>
                     </li>
                 </ul>
             </div>
-        </div><!--
-        --><div class="col-sm-3 vcenter" id="searchcol">
+        </div>
+        <div class="col-md-4" id="search-col">
             <form>
                 <div class="input-group">
                     <input class="form-control" ng-model="search" placeholder="Rechercher..." type="text">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span  class="glyphicon glyphicon-search"/></button>
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"/></button>
                     </span>
                 </div>
             </form>

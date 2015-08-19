@@ -1,5 +1,4 @@
-<div class="container-fluid">
-
+<main id="admin" class="container-fluid">
     <div class="page-header">
         <h3>Administration
             <button class="btn btn-default" ng-click="showAdminPanel = !(showAdminPanel)">{{showAdminPanel ? 'Masquer' : 'Afficher'}}
@@ -12,10 +11,10 @@
                 <div class="panel-heading">Gestion des événements</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.event.add'>Ajout</a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <button class="btn btn-default" disabled ui-sref-active='btn-primary' ui-sref='index.admin.event.edit()'>Modification</a>
                         </div>
                     </div>
@@ -27,10 +26,10 @@
                 <div class="panel-heading">Gestion des projections</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.projection.add'>Ajout</a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <button class="btn btn-default" disabled ui-sref-active='btn-primary' ui-sref='index.admin.projection.edit()'>Modification</a>
                         </div>
                     </div>
@@ -42,7 +41,7 @@
                 <div class="panel-heading">Gestion des tags</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-md-12">
                             <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.tag.edit'>Modification</a>
                         </div>
                     </div>
@@ -54,7 +53,7 @@
                 <div class="panel-heading">Gestion des Vidéo</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <button class="btn btn-default" ui-sref-active='btn-primary' ui-sref='index.admin.video.add'>Ajout</a>
                         </div>
                     </div>
@@ -70,4 +69,4 @@
             </div>
         </div>
     </div>
-</div>
+</main>

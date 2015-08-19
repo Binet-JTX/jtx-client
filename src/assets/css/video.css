@@ -1,0 +1,17 @@
+main#video #video-player-col #video-title {
+    text-align:center;
+    font-family: "Gill Sans";
+    font-weight: bold;
+    font-size:2em;
+}
+
+main#video  #video-player-col #video-date {
+    float: left;
+}
+main#video #video-player-col #video-views {
+    float: right
+}
+main#video #video-player-col #video-clear {
+    clear: both;
+    margin-bottom: 10px
+}

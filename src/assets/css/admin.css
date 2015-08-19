@@ -1,0 +1,11 @@
+main#admin #adminPanel .panel {
+    text-align: center;
+}
+main#admin #adminPanel .panel-heading {
+    font-weight: bold;
+    font-family: "Gill Sans"
+}
+main#admin #adminPanel .panel-body button {
+    margin-bottom:5px;
+    margin-top:5px;
+}

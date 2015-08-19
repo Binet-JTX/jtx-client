@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<main class="container-fluid" id="home">
     <div class="row">
-        <div class="col-md-5 col-lg-4">
-            <h1 class="gill">Dernière proj'</h1>
+        <div class="col-md-5 col-lg-4" id="last-proj-col">
+            <h1>Dernière proj'</h1>
             <div class="row" id="last-proj-poster-container">
                 <div class="col-xs-8 col-xs-offset-2">
                     <img id="last-proj-poster" src="{{lastProj.poster}}">
@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <div id="last-proj-title">
-                        <span class="gill">{{lastProj.title}}</span>
+                        {{lastProj.title}}
                     </div>
                     <div id="last-proj-description">
-                        <span class="text-muted" id="last-proj-date">Projeté
+                        <span id="last-proj-date">Projeté
                             {{lastProj.date.fromNow()}}
                         </span>
                         –
@@ -22,12 +22,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 col-lg-8">
-            <h1 class="gill">Récemment sur vos écrans</h1>
+        <div class="col-md-7 col-lg-8" id="recent-projs-col">
+            <h1>Récemment sur vos écrans</h1>
             <div class="row">
-                <jtx-thumbnail ng-model="proj" ng-repeat="proj in recentProjs"></jtx-thumbnail>
+                <jtx-thumbnail class="col-md-4 col-lg-3 col-sm-6 proj-thumb-col" ng-model="proj" ng-repeat="proj in recentProjs"></jtx-thumbnail>
             </div>
         </div>
     </div>
-</div>
-</div>
+</main>

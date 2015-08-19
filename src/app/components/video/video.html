@@ -1,18 +1,18 @@
-<div class="container-fluid">
+<main id="video" class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-1">
-            <h2 class="text-center gill">{{ video.title }}</h2>
+        <div class="col-sm-8 col-md-offset-1 col-lg-6 col-lg-offset-2" id="video-player-col">
+            <div id="video-title">{{ video.title }}</div>
             <jtx-video-player video="video"></jtx-video-player>
             <div class="text-muted">
-                <span id="date_diffusion">Première diffusion le {{video.date_diffusion.format('d MMMM YYYY')}}</span>
-                <span id="views">Nombre de vues : {{video.views}}</span>
-                <div id="clear"></div>
+                <span id="video-date">Première diffusion le {{video.date_diffusion.format('DD/MM/YYYY')}}</span>
+                <span id="video-views">Nombre de vues : {{video.views}}</span>
+                <div id="video-clear"></div>
             </div>
             <p>{{ video.description }}</p>
         </div>
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-4 col-md-3 col-lg-2 col-lg-offset-1" id="">
             <h2>&nbsp;</h2>
             <img src="assets/images/bonhommefonce.png" width="60%">
         </div>
     </div>
-</div>
+</main>

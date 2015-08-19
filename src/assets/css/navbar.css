@@ -1,0 +1,56 @@
+/* Common to all navbar columns */
+
+nav {
+    margin-bottom: 30px;
+}
+
+/* Logo column */
+
+nav > #logo-col {
+    float:left;
+    text-align: center;
+    padding-top: 15px;
+    z-index: 1;
+}
+
+/* Column containing the links site's pages */
+
+nav > #links-col {
+    padding-top: 50px;
+}
+nav > #links-col > div {
+    display: table;
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+}
+nav > #links-col ul {
+    display: table-row;
+}
+nav > #links-col ul > li {
+    text-align: center;
+    display: table-cell;
+    margin: 0;
+    padding: 5px;
+    font-size: 1.3em;
+    font-family: "Gill Sans";
+    text-transform: uppercase;
+}
+nav > #links-col ul > li.active-page a span {
+    border-bottom: solid 1px;
+    border-color: #333;
+    padding-bottom: 5px;
+}
+nav > #links-col ul > li > a, nav > #links-col ul > li > a:hover {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    outline: 0;
+}
+
+/* Column of the search field */
+
+nav > #search-col {
+    text-align: center;
+    padding-top: 50px;
+}
