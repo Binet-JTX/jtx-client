@@ -109,8 +109,12 @@ angular.module('jtx.main', [
     }
 ])
 
-.controller('main.ctrl.navbar', ['$scope',
-    function($scope) {}
+.controller('main.ctrl.navbar', ['$scope','$state',
+    function($scope,$state) {
+        $scope.search = function(query) {
+            $state.go('index.search');
+        };
+    }
 ])
 
 .controller('main.ctrl.home', ['$scope', 'Projection',
@@ -133,7 +137,7 @@ angular.module('jtx.main', [
 .directive('jtxSearchable', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/directive-template/searchable-directive.html',
+        templateUrl: 'app/components/common/directive-template/jtx-searchable.html',
         scope: {
             kind: '=kind', // video | projection | event
             object: '='
@@ -153,7 +157,7 @@ angular.module('jtx.main', [
 .directive('jtxTagInput', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/tag-input/directive-template/tag-input-directive.html',
+        templateUrl: 'app/components/common/tag-input/directive-template/jtx-tag-input.html',
         scope: {
             tags: '=ngModel'
         },
@@ -177,7 +181,7 @@ angular.module('jtx.main', [
 .directive('jtxThumbnail', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/directive-template/thumbnail-directive.html',
+        templateUrl: 'app/components/common/directive-template/jtx-thumbnail.html',
         scope: {
             object:'=ngModel'
         },

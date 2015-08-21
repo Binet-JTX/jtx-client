@@ -1,5 +1,8 @@
-Coucou ! Voici les évènements :
-<div ng-repeat='event in events'>
-    <jtx:searchable kind="'event'" object="event"></jtx:searchable>
-    <hr>
-</div>
+<main class="container-fluid" id="search">
+    <h1>Résultats de recherche</h1>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat='event in events'>
+            <jtx-searchable kind="'event'" object="event"></jtx-searchable>
+        </div>
+    </div>
+</main>

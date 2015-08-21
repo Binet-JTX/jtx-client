@@ -8,18 +8,22 @@ angular.module('jtx.projection', [
     function($stateProvider) {
         $stateProvider
             .state('index.projection', {
-                url: 'projection',
+                url: 'projection/{projId:[0-9]+}',
                 templateUrl: 'app/components/projection/projection.html',
                 controller: 'projection.ctrl'
             });
     }
 ])
 
-.controller('projection.ctrl', ['$scope', '$resource', 'Projection', 'Video',
-    function($scope, $resource, Projection, Video) {
-        Projection.query().$promise.then(
-            function(projections) {
-                $scope.proj = projections[0];
+.controller('projection.ctrl', ['$scope', '$resource', 'Projection', 'Video', '$stateParams', '$state',
+    function($scope, $resource, Projection, Video, $stateParams, $state) {
+        if(!$stateParams.projId) {
+            $stateParams.projId = 0;
+        }
+
+        Projection.query({id: $stateParams.projId}).$promise.then(
+            function(projection) {
+                $scope.proj = projection;
                 $scope.proj.date = moment($scope.proj.date);
             }
         );
