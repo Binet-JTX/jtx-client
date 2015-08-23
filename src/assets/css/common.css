@@ -6,22 +6,13 @@
 
 /* Sticky footer styles */
 
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
 footer {
-    margin-top:15px;
+    margin-top: 15px;
     position: absolute;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #f5f5f5;
 }
 footer > .container {
     text-align: center;
@@ -31,6 +22,67 @@ footer > .container {
 }
 footer > .container > .text-muted {
     margin: 20px 0;
+}
+
+/* Background */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+@media (min-width:768px) {
+    body {
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 60px;
+    }
+}
+body {
+    margin-bottom: 60px;
+}
+#background-top {
+    background-image: url(../images/background-top.jpg);
+    background-size: auto 60px;
+    background-position: center top;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#background-left {
+    background-image: url(../images/background-left.jpg);
+    background-size: 60px;
+    background-repeat: repeat-y;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#background-right {
+    background-image: url(../images/background-right.jpg);
+    background-size: 60px;
+    background-repeat: repeat-y;
+    background-position: right center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#background-bottom {
+    background-image: url(../images/background-bottom.jpg);
+    background-size: auto 60px;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 /* Gill Sans font */
