@@ -1,4 +1,4 @@
-@media (min-width:992px) {
+@media (min-width:1200px) {
     main#projection #projection-main-row [class*="col-"] {
         display: table-cell;
         float: none;
@@ -31,8 +31,8 @@ main#projection #projection-poster-col #projection-poster {
     object-fit: contain;
 }
 main#projection #projection-videos-list .projection-video-title {
-    font-size:1.5em;
-    font-family: "Gill Sans"
+    font-size:1.2em;
+    font-weight:bold;
 }
 main#projection #projection-video-list img {
     height: auto;

@@ -25,10 +25,16 @@ angular.module('jtx.video', [
 ])
 
 .controller('video.ctrl',
-    ['$scope', 'req_video',
-    function($scope, req_video) {
+    ['$scope', 'req_video', 'Video',
+    function($scope, req_video, Video) {
         $scope.video = req_video;
         $scope.video.date_diffusion = moment($scope.video.date_diffusion);
+        Video.query().$promise.then(
+            function(videos) {
+                $scope.playlist = videos;
+            }
+        )
+
     }
 ])
 

@@ -1,11 +1,11 @@
 main#video #video-player-col #video-title {
-    text-align:center;
+    text-align: center;
     font-family: "Gill Sans";
     font-weight: bold;
-    font-size:2em;
+    font-size: 2em;
+    margin-bottom: 30px;
 }
-
-main#video  #video-player-col #video-date {
+main#video #video-player-col #video-date {
     float: left;
 }
 main#video #video-player-col #video-views {
@@ -14,4 +14,32 @@ main#video #video-player-col #video-views {
 main#video #video-player-col #video-clear {
     clear: both;
     margin-bottom: 10px
+}
+main#video #video-playlist-col > .row {
+    margin-bottom: 5px;
+}
+main#video #video-playlist-col #video-playlist-col-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+main#video #video-playlist-col #video-playlist-col-header > div {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+}
+main#video #video-playlist-col #video-playlist-icon {
+    width: 100%;
+    height: auto;
+}
+main#video #video-playlist-col #video-playlist-title {
+    font-family: "Gill Sans";
+    font-size: 2em;
+    font-weight: bold;
+}
+main#video #video-playlist-col .video-playlist-title {
+    font-weight:bold;
+    font-size:1.2em;
+}
+main#video #video-playlist-col .video-playlist-data-container {
+    padding-left:0;
 }

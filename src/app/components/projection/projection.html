@@ -1,13 +1,13 @@
 <main id="projection" class="container-fluid">
     <div class="row" id="projection-main-row">
-        <div class="col-md-6 col-sm-8" id="projection-player-col">
+        <div class="col-lg-6 col-md-8" id="projection-player-col">
             <jtx-video-player></jtx-video-player>
             <div id="projection-title">{{proj.title}}</div>
             <p class="text-muted">Projeté le
                 {{proj.date.format('DD/MM/YYYY')}}</p>
             <p>{{proj.description}}</p>
         </div>
-        <div class="col-md-3 col-sm-4" id="projection-list-col">
+        <div class="col-lg-3 col-md-4" id="projection-list-col">
             <div id="projection-list">
                 <ol>
                     <li ng-repeat="video in videos">
@@ -16,8 +16,8 @@
                 </ol>
             </div>
         </div>
-        <div class="col-md-3 hidden-sm hidden-xs" id="projection-poster-col">
-            <img "{{proj.title}}" id="projection-poster" src="{{proj.poster}}">
+        <div class="col-lg-3 hidden-sm hidden-xs hidden-md" id="projection-poster-col">
+            <img alt="{{proj.title}}" id="projection-poster" src="{{proj.poster}}">
         </div>
     </div>
 <hr>

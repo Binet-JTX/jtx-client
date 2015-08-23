@@ -21,9 +21,9 @@ angular.module('jtx.projection', [
             $stateParams.projId = 0;
         }
 
-        Projection.query({id: $stateParams.projId}).$promise.then(
+        Projection.query().$promise.then(
             function(projection) {
-                $scope.proj = projection;
+                $scope.proj = projection[0];
                 $scope.proj.date = moment($scope.proj.date);
             }
         );
