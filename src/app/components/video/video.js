@@ -12,12 +12,12 @@ angular.module('jtx.video', [
     function($stateProvider) {
         $stateProvider
             .state('index.video', {
-                url: 'video',
+                url: 'video/{videoId:[0-9]+}',
                 templateUrl: 'app/components/video/video.html',
                 controller: 'video.ctrl',
                 resolve: {
-                    req_video: ['Video', function(Video) {
-                        return Video.get({id: 1});
+                    req_video: ['Video','$stateParams', function(Video,$stateParams) {
+                        return Video.get({id: $stateParams.videoId});
                     }]
                 }
             });
@@ -25,8 +25,8 @@ angular.module('jtx.video', [
 ])
 
 .controller('video.ctrl',
-    ['$scope', 'req_video', 'Video',
-    function($scope, req_video, Video) {
+    ['$scope', 'req_video', 'Video','$state',
+    function($scope, req_video, Video,$state) {
         $scope.video = req_video;
         $scope.video.date_diffusion = moment($scope.video.date_diffusion);
         Video.query().$promise.then(
@@ -34,7 +34,6 @@ angular.module('jtx.video', [
                 $scope.playlist = videos;
             }
         )
-
     }
 ])
 

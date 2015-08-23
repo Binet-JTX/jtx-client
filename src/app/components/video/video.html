@@ -21,13 +21,14 @@
                     <div id="video-playlist-title">Playlist</div>
                 </div>
             </div>
-            <div class="row" ng-repeat="video in playlist">
+            <div class="row" ng-repeat="video in playlist" ui-sref="index.video({videoId :video.id})">
                 <div class="col-xs-4">
                     <img alt="{{video.title}}" class="img-responsive" src="{{video.poster}}">
                 </div>
                 <div class="col-xs-8 video-playlist-data-container" tooltip="{{video.description}}">
                     <div class="video-playlist-title">{{video.title}}</div>
-                    <div class="video-playlist-description">{{video.views}} vues</div>
+                    <div class="video-playlist-description">{{video.views}}
+                        vues</div>
                 </div>
             </div>
         </div>
