@@ -1,14 +1,6 @@
 main#home [class*="col-"] > h1 {
     font-family: "Gill Sans";
 }
-main#home #last-proj-col #last-proj-poster-container {
-    background-image: url(../images/rond.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 15px;
-    margin-right: 15px;
-}
 main#home #last-proj-col #last-proj-poster-container #last-proj-poster {
     margin-top: 20%;
     margin-bottom: 20%;

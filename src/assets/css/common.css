@@ -10,14 +10,13 @@ footer {
     margin-top: 15px;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     /* Set the fixed height of the footer here */
     height: 60px;
 }
 footer > .container {
     text-align: center;
-    width: auto;
-    max-width: 680px;
     padding: 0 15px;
 }
 footer > .container > .text-muted {
@@ -32,57 +31,34 @@ html {
 }
 @media (min-width:768px) {
     body {
-        margin-left: 60px;
-        margin-right: 60px;
-        margin-top: 60px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
 }
 body {
     margin-bottom: 60px;
 }
-#background-top {
-    background-image: url(../images/background-top.jpg);
-    background-size: auto 60px;
-    background-position: center top;
-    background-repeat: repeat-x;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
 #background-left {
     background-image: url(../images/background-left.jpg);
-    background-size: 60px;
+    background-size: 100px;
+    width: 100px;
     background-repeat: repeat-y;
-    background-position: left center;
+    background-position: left top;
     position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
 }
 #background-right {
     background-image: url(../images/background-right.jpg);
-    background-size: 60px;
+    background-size: 100px;
+    width: 100px;
     background-repeat: repeat-y;
-    background-position: right center;
+    background-position: right top;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-}
-#background-bottom {
-    background-image: url(../images/background-bottom.jpg);
-    background-size: auto 60px;
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 /* Gill Sans font */
