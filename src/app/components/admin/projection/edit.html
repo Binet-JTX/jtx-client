@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="eEvent">Événement</label>
-                <input type="text" typeahead-editable="false" ng-model="projection.event" placeholder="Titre de l'événement" typeahead="event as event.title for event in events | filter:{title:$viewValue}" class="form-control">
+                <input tooltip="Ne pas modifier si l'événement porte le même nom que la projection !" type="text" typeahead-editable="false" ng-model="projection.event" placeholder="Titre de l'événement" typeahead="event as event.title for event in events | filter:{title:$viewValue}" class="form-control">
             </div>
             <div class="form-group">
                 <input class="form-control btn-primary" type="submit" value="Modifier"/>

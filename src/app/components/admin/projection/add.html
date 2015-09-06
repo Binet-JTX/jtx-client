@@ -23,6 +23,13 @@
                 </p>
             </div>
             <div class="form-group">
+                <label><input type="checkbox" ng-model="standalone"> Projection standalone (non rattachée à un événement particulier)</label>
+            </div>
+            <div class="form-group" ng-show="!standalone">
+                <label for="eEvent">Événement</label>
+                <input type="text" typeahead-editable="false" ng-model="projection.event" placeholder="Titre de l'événement" typeahead="event as event.title for event in events | filter:{title:$viewValue}" class="form-control">
+            </div>
+            <div class="form-group">
                 <input class="form-control btn-success" type="submit" value="Ajouter"/>
             </div>
         </form>

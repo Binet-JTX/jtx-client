@@ -23,9 +23,10 @@ angular.module('jtx.admin.projection', [
     }
 ])
 
-.controller('admin.projection.add.ctrl', ['$scope', '$resource', 'Projection',
-    function($scope, $resource, Projection) {
+.controller('admin.projection.add.ctrl', ['$scope', '$resource', 'Event', 'Projection',
+    function($scope, $resource, Event, Projection) {
         $scope.now = moment();
+        $scope.standalone = true;
 
         //Functions for datepicker
         $scope.open = function($event) {
@@ -34,12 +35,20 @@ angular.module('jtx.admin.projection', [
             $scope.opened = true;
         };
 
+        //For event autocompletion
+        Event.query().$promise.then(
+            function(events) {
+                $scope.events = events;
+                console.log($scope.events);
+            }
+        )
+
         $scope.addProjection = function(projection) {
             var sentProjection = {
                 title: projection.title,
                 description: projection.description,
                 date: moment(projection.date_f).format('YYYY-MM-DD'),
-                poster: null
+                event : projection.event.id
             };
 
             Projection.save(sentProjection).$promise.then(function(result) {
@@ -69,6 +78,7 @@ angular.module('jtx.admin.projection', [
             })
         });
 
+        //For event autocompletion
         Event.query().$promise.then(
             function(events) {
                 $scope.events = events;
