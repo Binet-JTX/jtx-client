@@ -117,18 +117,16 @@ angular.module('jtx.main', [
     }
 ])
 
-.controller('main.ctrl.home', ['$scope', 'Projection',
-    function($scope, Projection) {
-        Projection.query().$promise.then(
-            function(projections) {
-                for (var proj in projections) {
-                    projections[proj].date = moment(projections[proj].date);
-                }
+.controller('main.ctrl.home', ['$scope', 'Event',
+    function($scope, Event) {
+        Event.query().$promise.then(
+            function(events) {
+                _.forEach(events, function(p) {
+                    p.begin_date = moment(p.begin_date);
+                });
 
-                $scope.lastProj = projections[0];
-                $scope.recentProjs = projections;
-                //the next commmand removers first element of array
-                $scope.recentProjs.shift();
+                $scope.recent_events = _.sortBy(events, 'begin_date').reverse();
+                $scope.last_event = $scope.recent_events.shift();
             }
         );
     }
@@ -183,10 +181,14 @@ angular.module('jtx.main', [
         restrict: 'E',
         templateUrl: 'app/components/common/directive-template/jtx-thumbnail.html',
         scope: {
-            object:'=ngModel'
+            kind: '=', // video | projection | event
+            object: '='
         },
         controller: ['$scope', function($scope) {
-
+            $scope.kind = ($scope.kind === undefined) ? 'video' : $scope.kind;
+            if ($scope.kind == "event") {
+                $scope.object.date = $scope.object.begin_date;
+            }
         }]
     };
 });

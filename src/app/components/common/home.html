@@ -4,20 +4,18 @@
             <h1>Dernière proj'</h1>
             <div class="row" ui-sref="index.projection({projId:lastProj.id})" id="last-proj-poster-container">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <img id="last-proj-poster" src="{{lastProj.poster}}">
+                    <img id="last-proj-poster" src="{{ last_event.poster }}" ng-if="last_event.poster !== null">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <div id="last-proj-title">
-                        {{lastProj.title}}
+                        {{ last_event.title }}
                     </div>
                     <div id="last-proj-description">
                         <span id="last-proj-date">Projeté
-                            {{lastProj.date.fromNow()}}
+                            {{ last_event.begin_date.fromNow() }}
                         </span>
-                        –
-                        {{lastProj.description}}
                     </div>
                 </div>
             </div>
@@ -25,8 +23,8 @@
         <div class="col-md-7 col-lg-8" id="recent-projs-col">
             <h1>Récemment sur vos écrans</h1>
             <div class="row">
-                <div class="col-md-4 col-lg-3 col-sm-6 recent-proj-thumbnail-container" ng-repeat="proj in recentProjs">
-                    <jtx-thumbnail ng-model="proj" ui-sref="index.projection({projId:proj.id})"></jtx-thumbnail>
+                <div class="col-md-4 col-lg-3 col-sm-6 recent-proj-thumbnail-container" ng-repeat="event in recent_events">
+                    <jtx:thumbnail class="jtx-thumbnail" kind="'event'" object="event" ui-sref="index.projection({projId:proj.id})"></jtx:thumbnail>
                 </div>
             </div>
         </div>

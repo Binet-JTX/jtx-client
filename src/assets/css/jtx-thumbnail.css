@@ -1,24 +1,24 @@
-jtx-thumbnail .jtx-thumbnail-container {
+.jtx-thumbnail .jtx-thumbnail-container {
     position: relative;
 }
-jtx-thumbnail .jtx-thumbnail-container:before {
+.jtx-thumbnail .jtx-thumbnail-container:before {
     content: "";
     display: block;
     padding-top: 100%;
 }
-jtx-thumbnail .jtx-thumbnail-poster-container {
+.jtx-thumbnail .jtx-thumbnail-poster-container {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 }
-jtx-thumbnail .jtx-thumbnail-poster-container img {
+.jtx-thumbnail .jtx-thumbnail-poster-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-jtx-thumbnail .jtx-thumbnail-data-container {
+.jtx-thumbnail .jtx-thumbnail-data-container {
     text-align: center;
     position: absolute;
     left: 0;
@@ -27,7 +27,7 @@ jtx-thumbnail .jtx-thumbnail-data-container {
     background-color: rgb(57, 57, 57);
     color: rgb(227, 227, 227);
 }
-jtx-thumbnail  .jtx-thumbnail-title {
+.jtx-thumbnail .jtx-thumbnail-title {
     font-size: 1.5em;
     font-family: "Gill Sans";
     font-weight: bold;
