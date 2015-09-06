@@ -30,6 +30,18 @@ angular.module('jtx.admin.event', [
         $scope.showSuccess = false;
         $scope.showErrors = false;
 
+        //Functions for datepicker
+        $scope.openBegin = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.openedBegin = true;
+        };
+        $scope.openEnd = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.openedEnd = true;
+        };
+
         $scope.addEvent = function(event) {
             var sentEvent = {
                 title: event.title,
@@ -37,19 +49,11 @@ angular.module('jtx.admin.event', [
             };
 
             //Merge the date and time fields into one datetime JSON string
-            var beginHours = event.beginTime_f.split(":")[0];
-            var beginMinutes = event.beginTime_f.split(":")[1];
             sentEvent.begin_date = moment(event.beginDate_f);
-            sentEvent.begin_date.hours(beginHours);
-            sentEvent.begin_date.minutes(beginMinutes);
-            sentEvent.begin_date = sentEvent.begin_date.toJSON();
+            sentEvent.begin_date = sentEvent.begin_date.format("YYYY-MM-DD");
 
-            var endHours = event.endTime_f.split(":")[0];
-            var endMinutes = event.endTime_f.split(":")[1];
             sentEvent.end_date = moment(event.endDate_f);
-            sentEvent.end_date.hours(endHours);
-            sentEvent.end_date.minutes(endMinutes);
-            sentEvent.end_date = sentEvent.end_date.toJSON();
+            sentEvent.end_date = sentEvent.end_date.format("YYYY-MM-DD");
 
             Event.save(sentEvent).$promise.then(function(result) {
                 $scope.showSuccess = true;
@@ -72,14 +76,22 @@ angular.module('jtx.admin.event', [
             //Hydrates the date and time fields of the form with the data
             var beginDate_f = moment(event.begin_date);
             $scope.event.beginDate_f = beginDate_f.toDate();
-            $scope.event.beginTime_f = beginDate_f.add(2, 'h').format('HH:mm'); //TODO delete add(2,'h')
 
             var endDate_f = moment(event.end_date);
             $scope.event.endDate_f = endDate_f.toDate();
-            $scope.event.endTime_f = endDate_f.add(2, 'h').format('HH:mm');
-
-            $scope.event.updated_at = moment(event.updated_at);
         });
+
+        //Functions for datepicker
+        $scope.openBegin = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.openedBegin = true;
+        };
+        $scope.openEnd = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.openedEnd = true;
+        };
 
         $scope.now = new Date();
         $scope.showSuccess = false;
@@ -93,26 +105,18 @@ angular.module('jtx.admin.event', [
             };
 
             //Merge the date and time fields into one datetime JSON string
-            var beginHours = event.beginTime_f.split(":")[0];
-            var beginMinutes = event.beginTime_f.split(":")[1];
             sentEvent.begin_date = moment(event.beginDate_f);
-            sentEvent.begin_date.hours(beginHours);
-            sentEvent.begin_date.minutes(beginMinutes);
-            sentEvent.begin_date = sentEvent.begin_date.toJSON();
+            sentEvent.begin_date = sentEvent.begin_date.format("YYYY-MM-DD");
 
-            var endHours = event.endTime_f.split(":")[0];
-            var endMinutes = event.endTime_f.split(":")[1];
             sentEvent.end_date = moment(event.endDate_f);
-            sentEvent.end_date.hours(endHours);
-            sentEvent.end_date.minutes(endMinutes);
-            sentEvent.end_date = sentEvent.end_date.toJSON();
+            sentEvent.end_date = sentEvent.end_date.format("YYYY-MM-DD");
 
             Event.update(sentEvent).$promise.then(function(result) {
                 $scope.showSuccess = true;
                 $scope.success = "L'événement a été mis à jour avec succès !";
             }, function(errors) {
                 $scope.showErrors = true;
-                $scope.errors = "une erreur est survenue lors de la modification de l'événement.";
+                $scope.errors = "Une erreur est survenue lors de la modification de l'événement.";
                 console.log(errors);
             });
         };

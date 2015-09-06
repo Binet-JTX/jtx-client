@@ -157,7 +157,7 @@ angular.module('jtx.main', [
 .directive('jtxTagInput', function() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/common/tag-input/directive-template/jtx-tag-input.html',
+        templateUrl: 'app/components/common/directive-template/tag-input/jtx-tag-input.html',
         scope: {
             tags: '=ngModel'
         },
