@@ -3,8 +3,6 @@
         {{projection.id}}
         :
         {{projection.title}}
-        <small class="text-muted">(dernière modification
-            {{projection.updated_at.fromNow()}})</small>
     </h4>
     <div class="well">
         <form name="addProjectionForm" ng-submit="editProjection(projection)">
@@ -19,7 +17,18 @@
             <jtx-tag-input ng-model="projection.tags"></jtx-tag-input>
             <div class="form-group">
                 <label for="eDate">Date</label>
-                <input class="form-control" name="eDate" ng-model="projection.date_f" placeholder="{{now.format('YYYY-MM-DD')}}" required type="date"/>
+                <p class="input-group">
+                    <input class="form-control" date-disabled="disabled(date, mode)" date-format="YYYY-MM-DD" datepicker-options="" datepicker-popup="dd/MM/yyyy" is-open="opened" ng-click="open($event)" ng-model="projection.date_f" show-button-bar="false" starting-day="1" type="text"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="open($event)" type="button">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="eEvent">Événement</label>
+                <input type="text" typeahead-editable="false" ng-model="projection.event" placeholder="Titre de l'événement" typeahead="event as event.title for event in events | filter:{title:$viewValue}" class="form-control">
             </div>
             <div class="form-group">
                 <input class="form-control btn-primary" type="submit" value="Modifier"/>

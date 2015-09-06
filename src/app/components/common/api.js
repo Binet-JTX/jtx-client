@@ -9,7 +9,7 @@ angular.module('jtx.api', [
         return {
             route: function(path) {
                 if (/localhost/.test($location.absUrl())) {
-                    return 'http://127.0.0.1:8000' + (path === '' ? '' : '/' + path);
+                    return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
                 } else {
                     return 'http://binet-jtx.com/api' + (path === '' ? '' : '/' + path);
                 }
@@ -45,7 +45,7 @@ angular.module('jtx.api', [
 .factory('Projection', ['API', '$resource',
     function(API, $resource) {
         return $resource(API.route('projections/:id/'), {id: '@id'},{
-            //
+            update: {method: 'PUT', url: API.route('projections/:id/')},
         }, {stripTrailingSlashes: false});
     }
 ])

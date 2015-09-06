@@ -27,12 +27,19 @@ angular.module('jtx.admin.projection', [
     function($scope, $resource, Projection) {
         $scope.now = moment();
 
+        //Functions for datepicker
+        $scope.open = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.opened = true;
+        };
+
         $scope.addProjection = function(projection) {
             var sentProjection = {
                 title: projection.title,
                 description: projection.description,
-                date:moment(projection.date_f).format('YYYY-MM-DD'),
-                poster:null
+                date: moment(projection.date_f).format('YYYY-MM-DD'),
+                poster: null
             };
 
             Projection.save(sentProjection).$promise.then(function(result) {
@@ -46,8 +53,8 @@ angular.module('jtx.admin.projection', [
     }
 ])
 
-.controller('admin.projection.edit.ctrl', ['$scope', '$resource', 'Projection', '$stateParams', '$window', '$state',
-    function($scope, $resource, Projection, $stateParams, $window, $state) {
+.controller('admin.projection.edit.ctrl', ['$scope', '$resource', 'Projection', 'Event', '$stateParams', '$window', '$state',
+    function($scope, $resource, Projection, Event, $stateParams, $window, $state) {
         Projection.get({
             id: $stateParams.projectionId
         }, function(projection) {
@@ -55,10 +62,27 @@ angular.module('jtx.admin.projection', [
 
             var date_f = moment(projection.date);
             $scope.projection.date_f = date_f.toDate();
-
-            $scope.projection.updated_at = moment(projection.updated_at);
+            Event.get({
+                id: projection.event
+            }, function(event) {
+                $scope.projection.event = event;
+            })
         });
 
+        Event.query().$promise.then(
+            function(events) {
+                $scope.events = events;
+            }
+        )
+
+        //Functions for datepicker
+        $scope.open = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.opened = true;
+        };
+
+        //Initialization of the form
         $scope.now = moment();
         $scope.showSuccess = false;
         $scope.showErrors = false;
@@ -68,11 +92,9 @@ angular.module('jtx.admin.projection', [
                 title: projection.title,
                 description: projection.description,
                 id: projection.id,
-                date: moment(projection.date_f).format('YYYY-MM-DD')
+                date: moment(projection.date_f).format('YYYY-MM-DD'),
+                event: projection.event.id
             };
-
-            console.log(sentProjection);
-
             Projection.update(sentProjection).$promise.then(function(result) {
                 $scope.showSuccess = true;
                 $scope.success = "L'événement a été mis à jour avec succès !";
