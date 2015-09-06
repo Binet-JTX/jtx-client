@@ -1,6 +1,9 @@
 main#home [class*="col-"] > h1 {
     font-family: "Gill Sans";
 }
+main#home #last-proj-col {
+    text-align: center;
+}
 main#home #last-proj-col #last-proj-poster-container #last-proj-poster {
     margin-top: 20%;
     margin-bottom: 20%;

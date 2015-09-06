@@ -1,23 +1,8 @@
-@media (min-width:1200px) {
-    main#projection #projection-main-row [class*="col-"] {
-        display: table-cell;
-        float: none;
-        vertical-align: middle;
-    }
-    main#projection #projection-list-col {
-        vertical-align: top !important;
-    }
-    main#projection #projection-list-col #projection-video-list {
-        overflow: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+main#projection #projection-title-row div {
+    text-align: center;
 }
-main#projection #projection-player-col #projection-title {
-    font-size: 2em;
+main#projection #projection-title {
+    font-size: 4em;
     font-family: "Gill Sans";
     font-weight: bold;
 }
@@ -25,14 +10,9 @@ main#projection #projection-list-col #projection-list {
     overflow: auto;
     max-height: 400px;
 }
-main#projection #projection-poster-col #projection-poster {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
 main#projection #projection-videos-list .projection-video-title {
-    font-size:1.2em;
-    font-weight:bold;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 main#projection #projection-video-list img {
     height: auto;
