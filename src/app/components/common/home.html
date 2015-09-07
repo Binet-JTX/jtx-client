@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md-5 col-lg-4" id="last-proj-col">
             <h1>Dernière proj'</h1>
-            <div class="row" ui-sref="index.projection({projId:lastProj.id})" id="last-proj-poster-container">
+            <div class="row" ui-sref="index.contents.view({id: last_event.id})" id="last-proj-poster-container">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <img id="last-proj-poster" src="{{ last_event.poster }}" ng-if="last_event.poster !== null">
+                    <img id="last-proj-poster" ng-src="{{ last_event.poster }}" ng-if="last_event.poster !== null">
                 </div>
             </div>
             <div class="row">
@@ -24,7 +24,7 @@
             <h1>Récemment sur vos écrans</h1>
             <div class="row">
                 <div class="col-md-4 col-lg-3 col-sm-6 recent-proj-thumbnail-container" ng-repeat="event in recent_events">
-                    <jtx:thumbnail class="jtx-thumbnail" kind="'event'" object="event" ui-sref="index.projection({projId:proj.id})"></jtx:thumbnail>
+                    <jtx:thumbnail class="jtx-thumbnail" kind="'event'" object="event" ui-sref="index.contents.view({id: event.id})"></jtx:thumbnail>
                 </div>
             </div>
         </div>
