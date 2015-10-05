@@ -1,0 +1,84 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Changes the mouse to a hand when hovering clickable elements */
+
+[ui-sref], [ng-click], [data-ng-click], [x-ng-click] {
+    cursor: pointer;
+}
+
+/* Sticky footer styles */
+
+footer {
+    margin-top: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+}
+footer > .container {
+    text-align: center;
+    padding: 0 15px;
+}
+footer > .container > .text-muted {
+    margin: 20px 0;
+}
+
+/* Background */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+@media (min-width:768px) {
+    body {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+body {
+    margin-bottom: 60px;
+}
+.background-left {
+    background-image: url(/assets/images/background_left.jpg);
+    background-size: 100px;
+    width: 100px;
+    background-repeat: repeat-y;
+    background-position: left top;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.background-right {
+    background-image: url(/assets/images/background_right.jpg);
+    background-size: 100px;
+    width: 100px;
+    background-repeat: repeat-y;
+    background-position: right top;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Gill Sans font */
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url('/assets/fonts/Gill_Sans_Light.ttf');
+}
+@font-face {
+    font-family: "Gill Sans";
+    font-weight: bold;
+    src: url('/assets/fonts/Gill_Sans_Bold.ttf');
+}
+.gill {
+    font-family: "Gill Sans"
+}

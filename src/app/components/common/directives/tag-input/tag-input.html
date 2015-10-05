@@ -1,0 +1,13 @@
+<span ng-switch="data._type">
+    <span class="glyphicon glyphicon-user" ng-switch-when="Acteur" tooltip="Acteur"></span>
+    <span class="glyphicon glyphicon-bullhorn" ng-switch-when="Réalisateur" tooltip="Réalisateur"></span>
+    <span class="glyphicon glyphicon-sunglasses" ng-switch-when="Objet" tooltip="Objet"></span>
+    <span class="glyphicon glyphicon-folder-open" ng-switch-when="Catégorie" tooltip="Catégorie"></span>
+    <span class="glyphicon glyphicon-map-marker" ng-switch-when="Lieu" tooltip="Lieu"></span>
+    <span class="glyphicon glyphicon-film" ng-switch-when="JTX" tooltip="JTX"></span>
+    <span ng-switch-when="JTX">JTX</span>
+    <span class="glyphicon glyphicon-apple" ng-switch-when="Binet" tooltip="Binet"></span>
+    <span class="glyphicon glyphicon-tag" ng-switch-when="Autre" tooltip="Autre"></span>
+</span>
+<span ng-bind="$getDisplayText()"></span>
+<a class="remove-button" ng-bind="::$removeTagSymbol" ng-click="$removeTag()"></a>

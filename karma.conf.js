@@ -1,29 +1,76 @@
 'use strict';
 
+var path = require('path');
+var conf = require('./gulp/conf');
+
+var _ = require('lodash');
+var wiredep = require('wiredep');
+
+function listFiles() {
+  var wiredepOptions = _.extend({}, conf.wiredep, {
+    dependencies: true,
+    devDependencies: true
+  });
+
+  return wiredep(wiredepOptions).js
+    .concat([
+      path.join(conf.paths.src, '/app/**/*.module.js'),
+      path.join(conf.paths.src, '/app/**/*.js'),
+      path.join(conf.paths.src, '/**/*.spec.js'),
+      path.join(conf.paths.src, '/**/*.mock.js'),
+      path.join(conf.paths.src, '/**/*.html')
+    ]);
+}
+
 module.exports = function(config) {
 
   var configuration = {
-    autoWatch : false,
+    files: listFiles(),
 
-    frameworks: ['jasmine'],
+    singleRun: true,
+
+    autoWatch: false,
 
     ngHtml2JsPreprocessor: {
-      stripPrefix: 'src/',
-      moduleName: 'gulpAngular'
+      stripPrefix: conf.paths.src + '/',
+      moduleName: 'jtx'
+    },
+
+    logLevel: 'WARN',
+
+    frameworks: ['jasmine', 'angular-filesort'],
+
+    angularFilesort: {
+      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
     },
 
     browsers : ['PhantomJS'],
 
     plugins : [
       'karma-phantomjs-launcher',
+      'karma-angular-filesort',
+      'karma-coverage',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
     ],
 
-    preprocessors: {
-      'src/**/*.html': ['ng-html2js']
-    }
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
+
+    reporters: ['progress', 'coverage']
   };
+
+  var preprocessors = {};
+  var pathSrcHtml = path.join(conf.paths.src, '/**/*.html');
+  preprocessors[pathSrcHtml] = ['ng-html2js'];
+
+  var pathSrcJs = path.join(conf.paths.src, '/**/!(*.spec).js');
+
+  preprocessors[pathSrcJs] = ['coverage'];
+
+  configuration.preprocessors = preprocessors;
 
   // This block is needed to execute Chrome on Travis
   // If you ever plan to use Chrome and Travis, you can keep it

@@ -1,7 +1,9 @@
 node_modules/
 bower_components/
+coverage/
 .sass-cache/
+.idea/
 .tmp/
 dist/
-src/assets/videos
-src/media
+.editorconfig
+/**/.eslintrc

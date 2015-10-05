@@ -1,25 +1,27 @@
 <div class="container">
     <div class="well">
         <h3>Connexion au site du JTX</h3>
-        <p class="text-muted">Le site du JTX est normalement réservé à tous les polytechniciens de promotions supérieures ou égales à 1989. Pour obtenir un accès spécial à certaines vidéos, contactez le
-            <a href="mailto:camille.masset@polytechnique.edu">respo web</a>.</p>
+
+        <p>Le site du JTX est normalement réservé à tous les polytechniciens de promotions supérieures ou égales à 1989. Pour obtenir un accès spécial à certaines vidéos, contactez le <a href="mailto:camille.masset@polytechnique.edu">respo web</a>.</p>
+
         <div class="panel panel-default">
             <div class="panel-heading">Connexion spéciale</div>
+            
             <div class="panel-body">
-                <form ng-submit="customLogin(credentials)">
+                <form ng-submit="authCtl.customLogin(authCtl.credentials)">
                     <div class="form-group" tooltip="L'adresse e-mail se termine normalement par @polytechnique.edu">
                         <label for="cEmail">Adresse e-mail</label>
-                        <input class="form-control" id="cEmail" name="cEmail" ng-model="credentials.email" required type="email"></input>
+                        <input class="form-control" id="cEmail" name="cEmail" ng-model="authCtl.credentials.email" required type="email"></input>
                     </div>
                     <div class="form-group">
                         <label for="cPassword">Mot de passe</label>
-                        <input class="form-control" id="cPassword" name="cPassword" ng-model="credentials.password" required type="password"></input>
+                        <input class="form-control" id="cPassword" name="cPassword" ng-model="authCtl.credentials.password" required type="password"></input>
                     </div>
                     <div class="form-group">
                         <input  class="form-control btn-primary" type="submit" value="Connexion"/>
                     </div>
-                </form>
-                <alert ng-show="showErrors" type="danger">{{ errors }}</alert>
+                </form
+                <alert ng-repeat="alert in authCtl.alerts" type="danger" close="authCtl.closeAlert($index)">{{ alert }}</alert>
             </div>
         </div>
     </div>

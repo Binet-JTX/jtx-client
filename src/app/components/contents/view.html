@@ -1,7 +1,7 @@
 <main class="container-fluid">
     <div class="row">
-        {{ event.title }}<br />
-        {{ event.description }}<br />
-        <span ng-repeat="p in event.projections">{{ p.title }} - </span>
+        {{ viewCtl.event.title }}<br />
+        {{ viewCtl.event.description }}<br />
+        <span ng-repeat="p in viewCtl.event.projections">{{ p.title }} - </span>
     </div>
 </main>

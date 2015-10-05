@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <nav class="row" role="navigation">
+        <div class="col-md-2 logo-col">
+            <a ui-sref="index.home">
+                <img alt="Logo" src="assets/images/logoJTX.png" width="200px"/>
+            </a>
+        </div>
+        <div class="col-md-6 links-col">
+            <div>
+                <ul>
+                    <li ui-sref-active="active-page">
+                        <a ui-sref='index.home'>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active-page">
+                        <a ui-sref='index.video({videoId:1})'>
+                            <span>Lecteur&nbsp;vidéo</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active-page">
+                        <a ui-sref='index.contents.projs'>
+                            <span>Projections&nbsp;JTX</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active-page">
+                        <a ui-sref='index.contents.all'>
+                            <span>Événements</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active-page">
+                        <a ui-sref='index.admin'>
+                            <span>Administration</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 search-col">
+            <form ng-submit="search(query)">
+                <div class="input-group">
+                    <input class="form-control" ng-model="query" placeholder="Rechercher..." type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"/></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </nav>
+</div>

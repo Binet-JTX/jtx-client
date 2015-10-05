@@ -1,0 +1,17 @@
+<div class="hidden-sm hidden-xs background-left"></div>
+<div class="hidden-sm hidden-xs background-right"></div>
+<div ui-view="navbar"></div>
+<div ui-view=""></div>
+<footer>
+    <div class="container">
+        <p class="text-muted">© JTX 2013 –
+            <a ui-sref="index.binet">Le binet</a>
+            –
+            <a ui-sref="index.legal">Mentions légales</a>
+            –
+            <a ui-sref="index.login" ng-show="!mainCtl.isLoggedIn()">Connexion</a>
+            <a ng-click="mainCtl.logout()" ng-show="mainCtl.isLoggedIn()">Déconnexion</a>
+        </p>
+    </div>
+</footer>
+</div>

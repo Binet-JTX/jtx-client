@@ -1,16 +1,16 @@
 <main class="container-fluid" id="video">
     <div class="row">
         <div class="col-md-8" id="video-player-col">
-            <div id="video-title">{{ video.title }}</div>
-            <jtx-video-player video="video"></jtx-video-player>
+            <div id="video-title">{{ videoCtl.video.title }}</div>
+            <jtx-video-player video="videoCtl.video"></jtx-video-player>
             <div class="text-muted">
                 <span id="video-date">Première diffusion le
-                    {{video.date_diffusion.format('DD/MM/YYYY')}}</span>
+                    {{ videoCtl.video.date_diffusion.format('DD/MM/YYYY') }}</span>
                 <span id="video-views">Nombre de vues :
-                    {{video.views}}</span>
+                    {{ videoCtl.video.views }}</span>
                 <div id="video-clear"></div>
             </div>
-            <p>{{ video.description }}</p>
+            <p>{{ videoCtl.video.description }}</p>
         </div>
         <div class="col-md-4" id="video-playlist-col">
             <div class="row" id="video-playlist-col-header">
@@ -21,14 +21,13 @@
                     <div id="video-playlist-title">Playlist</div>
                 </div>
             </div>
-            <div class="row" ng-repeat="video in playlist" ui-sref="index.video({videoId :video.id})">
+            <div class="row" ng-repeat="video in videoCtl.playlist" ui-sref="index.video({id: videoCtl.video.id})">
                 <div class="col-xs-4">
-                    <img alt="{{video.title}}" class="img-responsive" src="{{video.poster}}">
+                    <img alt="{{ video.title }}" class="img-responsive" ng-src="{{ video.poster }}">
                 </div>
-                <div class="col-xs-8 video-playlist-data-container" tooltip="{{video.description}}">
-                    <div class="video-playlist-title">{{video.title}}</div>
-                    <div class="video-playlist-description">{{video.views}}
-                        vues</div>
+                <div class="col-xs-8 video-playlist-data-container" tooltip="{{ video.description }}">
+                    <div class="video-playlist-title">{{ video.title }}</div>
+                    <div class="video-playlist-description">{{ video.views }} vues</div>
                 </div>
             </div>
         </div>

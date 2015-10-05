@@ -1,0 +1,25 @@
+main#home [class*="col-"] > h1 {
+    font-family: "Gill Sans";
+}
+
+main#home .last-proj-poster-container img {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    border: solid 5px;
+    width: 100%;
+    height: auto;
+}
+main#home h3.last-proj-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: "Gill Sans";
+    font-weight: bold;
+}
+main#home .last-proj-date {
+    color: #777;
+}
+main#home .recent-proj-thumbnail-container {
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}

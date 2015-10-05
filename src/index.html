@@ -1,26 +1,12 @@
 <!doctype html>
-<html ng-app="jtx">
-
-<head>
+<html class="no-js" ng-app="jtx">
+  <head>
     <meta charset="utf-8">
-    <title>jtx</title>
+    <title>JTX</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- Manual injection of JS files -->
-    <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap-3.3.5.min.js"></script>
-
-    <!-- Injection of CSS files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-3.3.5.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/common.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/jtx-thumbnail.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/projection.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/video.css">
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <!-- bower:css -->
     <!-- run `gulp inject` to automatically populate bower styles dependencies -->
@@ -32,32 +18,17 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-</head>
 
-<body>
+    <!-- build:js(src) scripts/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div ui-view></div>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-        (function(b, o, i, l, e, r) {
-            b.GoogleAnalyticsObject = l;
-            b[l] || (b[l] =
-                function() {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
-            b[l].l = +new Date;
-            e = o.createElement(i);
-            r = o.getElementsByTagName(i)[0];
-            e.src = '//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-XXXXX-X');
-        ga('send', 'pageview');
-    </script>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
@@ -75,8 +46,6 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-    <script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_fr-fr.js"></script>
-
-</body>
-
+    <!--<script src="https://code.angularjs.org/1.4.5/i18n/angular-locale_fr-fr.js"></script>-->
+  </body>
 </html>

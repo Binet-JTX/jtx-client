@@ -1,0 +1,30 @@
+<main class="container-fluid" id="home">
+    <div class="row">
+        <div class="col-md-5 col-lg-4 text-center">
+            <h1>Dernière proj'</h1>
+            <div class="row last-proj-poster-container" ui-sref="index.contents.view({id: homeCtl.last_event.id})">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <img ng-src="{{ homeCtl.last_event.poster }}" ng-if="homeCtl.last_event.poster !== null">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <h3 class="last-proj-title">
+                        {{ homeCtl.last_event.title }}
+                    </h3>
+                    <span class="last-proj-date">Projeté
+                        {{ homeCtl.last_event.begin_date.fromNow() }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-lg-8">
+            <h1>Récemment sur vos écrans</h1>
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-sm-6 recent-proj-thumbnail-container" ng-repeat="event in homeCtl.recent_events">
+                    <jtx:thumbnail class="jtx-thumbnail" kind="'event'" object="event" ui-sref="index.contents.view({id: event.id})"></jtx:thumbnail>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
