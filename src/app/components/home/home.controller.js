@@ -9,7 +9,7 @@
     function HomeController(Event, moment) {
         var vm = this;
 
-        Event.query().$promise.then(
+        Event.findAll().then(
             function(events) {
                 _.forEach(events, function(p) {
                     p.begin_date = moment(p.begin_date);

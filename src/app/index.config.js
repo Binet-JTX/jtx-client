@@ -6,12 +6,19 @@
         .config(config);
 
     /** @ngInject */
-    function config($logProvider, $httpProvider, $urlRouterProvider, moment) {
+    function config($logProvider, $httpProvider, $urlRouterProvider, moment, DSProvider, DSHttpAdapterProvider) {
         // Enable log
         $logProvider.debugEnabled(true);
 
         // Default route
         $urlRouterProvider.otherwise('/home');
+
+        // JSData config
+        angular.extend(DSProvider.defaults, {});
+        angular.extend(DSHttpAdapterProvider.defaults, {
+            basePath: 'http://127.0.0.1:8000',
+            forceTrailingSlash: true
+        });
 
         // Enable the interception of queries by the auth.interceptor factory
         $httpProvider.interceptors.push('AuthInterceptor');

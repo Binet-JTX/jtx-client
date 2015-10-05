@@ -7,15 +7,16 @@
         .factory('Projection', Projection);
 
     /** @ngInject */
-    function Event(API, $resource) {
-        return $resource(
-            API.route('events/:id'), 
-            {id: '@id'}, 
-            {
-                update: {method: 'PUT', url: API.route('events/:id')}
-            }, 
-            {stripTrailingSlashes: false}
-        );
+    function Event(API, $resource, DS) {
+        // return $resource(
+        //     API.route('events/:id'), 
+        //     {id: '@id'}, 
+        //     {
+        //         update: {method: 'PUT', url: API.route('events/:id')}
+        //     }, 
+        //     {stripTrailingSlashes: false}
+        // );
+        return DS.defineResource('events');
     }
 
     /** @ngInject */

@@ -13,6 +13,7 @@
             'ui.router', 
             'ui.bootstrap',
             'ngTagsInput',
+            'js-data', 
 
             'jtx.auth',
             'jtx.static',
